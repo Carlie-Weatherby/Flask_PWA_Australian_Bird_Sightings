@@ -10,7 +10,7 @@
         - 'script-src': Permits scripts from 'self' and Font Awesome servers.
         - 'style-src': Permits inline styles ('unsafe-inline') and Font Awesome styles.
         Used cautiously to enable icons while minimizing risks. -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://kit.fontawesome.com; style-src 'self' https://kit.fontawesome.com 'unsafe-inline'; default-src 'self' https:;">
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://kit.fontawesome.com; style-src 'self' https://kit.fontawesome.com 'unsafe-inline'; default-src 'self' https:;">
         
         <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
         
@@ -37,9 +37,14 @@
                 <a href="index.html" class="active"> <!-- Add aria-label back)-->
                     <i class="fa-solid fa-house"></i> <!-- Home icon -->
                 </a>
-                <a href="search.html">Search</a>
-                <a href="about.html">About</a>
-                <a href="donate.html">Donate</a>
+                <a href="search.html"> Search 
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="about.html"> About 
+                    <i class="fas fa-info-circle"></i>
+                </a>
+                <a href="donate.html"> Donate 
+                    <i class="fas fa-hand-holding-usd"></i></a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                     <i class="fa-solid fa-bars"></i> <!-- Hamburger menu icon -->
                 </a>
