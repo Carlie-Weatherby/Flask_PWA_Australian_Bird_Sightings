@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 
@@ -11,6 +12,8 @@ header{
 
 body {
     font-family: 'Roboto', Verdana, Tahoma, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 
@@ -45,12 +48,12 @@ body {
 
 
 .banner-text h1 {
-    font-size: 2.5rem; /* Adjust heading size */
+    font-size: 2rem; /* Adjust heading size */
 }
 
 
 .banner-text h2 {
-    font-size: 1.7rem; /* Smaller font size for subheading */
+    font-size: 1.5rem; /* Smaller font size for subheading */
 }
 
 
@@ -58,17 +61,20 @@ body {
 .topnav {
     background-color: #333; /* Dark background color */
     overflow: hidden; /* Prevents overflow issues */
+    display: flex;
+    padding: 0.5rem 1rem;
 }
 
 
 .topnav a {
     float: left;
-    display: block;
+    display: block; /* display: flex; ---appears too cramped*/
     color: white; /* Light text color for contrast */
     text-align: center;
-    padding: 14px 20px;
+    padding: 0.5rem 1rem;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 16px;
+    align-items: center;
 }
 
 
@@ -81,6 +87,7 @@ body {
 .topnav a.active {
     background-color: #04AA6D; /* Highlighted link */
     color: white;
+    font-weight: bold;
 }
 
 
@@ -113,16 +120,38 @@ body {
 }
 
 
+.nav-icon {
+    margin-left: 4px; /* Space between text and icon */
+    align-items: center; /* Vertically center icon */
+}
+
+
+/* Changes for smaller screens (<600px) */
+@media screen and (max-width: 600px) {
+    .nav-text {
+        display: none; /* Hide text */
+    }
+
+
+    .nav-icon {
+        margin-right: 0; /* Remove unnecessary spacing */
+    }
+}
+
+
 section{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .container{
-    margin-top: 10%;
+    margin-top: 2rem;
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 
@@ -130,7 +159,6 @@ section{
     height: 300px;
     width: 300px;
     border-radius: 50%; /* Rounds the corners as a percentage of the element's dimensions. */
-    object-fit: cover; /* Ensures the image fits within the circle - UNCLEAR IF NECESSARY */
 }
 
 

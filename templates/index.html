@@ -3,7 +3,6 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
-
         <!-- Content Security Policy (CSP):
         Allows Font Awesome to load securely. Includes:
         - 'script-src': Permits scripts from 'self' and Font Awesome servers.
@@ -11,14 +10,18 @@
         Used cautiously to enable icons while minimizing risks. -->
         <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://kit.fontawesome.com; style-src 'self' https://kit.fontawesome.com 'unsafe-inline'; default-src 'self' https:;">
         
-        <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
-        
+        <title>Australian Birds - Carlie's Sightings</title>
+
         <link rel="stylesheet" href="../static/css/style.css" />
+        <!-- Font Awesome Icons -->
+        <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
+        <!-- Google Fonts: Roboto -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        
         <!-- <link rel="manifest" href="static/manifest.json" /> -->
         <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.png"> -->
 
-        <title>Australian Birds - Carlie's Sightings</title>
+        
     </head>
     <body>
         <header>
@@ -32,22 +35,26 @@
             </div>
 
             <!-- Navigation Bar -->
-            <div class="topnav" id="myTopnav">
-                <a href="index.html" class="active" aria-label="Home">
-                    <i class="fa-solid fa-house"></i> <!-- Home icon -->
+            <nav class="topnav" id="myTopnav">
+                <a href="index.html" class="active" aria-label="Home page">
+                    <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
                 </a>
-                <a href="search.html"> Search 
-                    <i class="fas fa-search"></i>
+                <a href="search.html" aria-label="Search page">
+                    <span class="nav-text"> Search </span>
+                    <span class="nav-icon"><i class="fas fa-search"></i></span>
                 </a>
-                <a href="about.html"> About 
-                    <i class="fas fa-info-circle"></i>
+                <a href="about.html" aria-label="About page"> 
+                    <span class="nav-text"> About </span>
+                    <span class="nav-icon"><i class="fas fa-info-circle"></i></span>
                 </a>
-                <a href="donate.html"> Donate 
-                    <i class="fas fa-hand-holding-usd"></i></a>
+                <a href="donate.html" aria-label="Donate page">
+                    <span class="nav-text"> Donate </span>
+                    <span class="nav-icon"><i class="fas fa-hand-holding-usd"></i></span>
+                </a>
                 <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Toggle navigation menu">
                     <i class="fa-solid fa-bars"></i> <!-- Hamburger menu icon -->
                 </a>
-            </div>
+            </nav>
         </header>
         <main>
         <!-- {% include "partials/menu.html" %} -->
@@ -88,7 +95,7 @@
         <!-- <script src="static/js/app.js"></script> -->
         <!-- Should this move to below footer? - TBC -->
         <footer>
-            <p>© Copyright 2022 Doggo Co LTd.</p>
+            <p>&copy; Copyright 2022 Doggo Co Ltd.</p>
         </footer>
     </body>
 </html>
