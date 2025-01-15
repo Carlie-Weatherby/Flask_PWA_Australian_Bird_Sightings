@@ -121,18 +121,21 @@ section{
 }
 
 .container{
-    margin-top: 10%
+    margin-top: 10%;
+    display: flex;
 }
 
 
 .container img{
     height: 300px;
+    width: 300px;
+    border-radius: 50%; /* Rounds the corners as a percentage of the element's dimensions. */
+    object-fit: cover; /* Ensures the image fits within the circle - UNCLEAR IF NECESSARY */
 }
 
 
 .container h2{
     margin-top: 3%;
-}
 
 
 footer {
