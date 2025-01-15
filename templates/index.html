@@ -2,27 +2,24 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- Restricts script loading to the same origin for security (CSP); updated for FA use -->
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://kit.fontawesome.com; style-src 'self' https://kit.fontawesome.com 'unsafe-inline';">
-        
-        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
-        <!-- FUTURE: TO-DO: Use FA Kits (Sign up for Pro version). Currently using LINK to CSS. OK.-->
-        <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">-->
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
+        <meta http-equiv="Content-Language" content="en"> <!-- Specifies the language of the lang in HTML headers (old-school) -->
 
         <!-- Content Security Policy (CSP):
-        Allows Font Awesome Kit to load styles securely.
-        - 'script-src': Permits scripts from the same origin ('self') and Font Awesome's servers (https://kit.fontawesome.com).
-        - 'style-src': Permits styles from the same origin, Font Awesome's servers, and dynamically injected inline styles ('unsafe-inline').
-        This is necessary for rendering Font Awesome icons but should be used cautiously to minimize security risks. -->
+        Allows Font Awesome to load securely. Includes:
+        - 'script-src': Permits scripts from 'self' and Font Awesome servers.
+        - 'style-src': Permits inline styles ('unsafe-inline') and Font Awesome styles.
+        Used cautiously to enable icons while minimizing risks. -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://kit.fontawesome.com; style-src 'self' https://kit.fontawesome.com 'unsafe-inline'; default-src 'self' https:;">
+        
         <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
-
+        
         <link rel="stylesheet" href="../static/css/style.css" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <title>Australian Birds - Carlie's Sightings</title>
         <!-- <link rel="manifest" href="static/manifest.json" /> -->
         <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.png"> -->
+
+        <title>Australian Birds - Carlie's Sightings</title>
     </head>
     <body>
         <header>
