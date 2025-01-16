@@ -1,5 +1,5 @@
 html {
-    font-size: 16px;  /* Root font size for rem units */
+    font-size: 16px;  /* The root font size for rem units */
 }
 
 
@@ -11,7 +11,7 @@ html {
 
 
 header{
-    height: 45px; /* Space below navbar - CFW */
+    height: 120px;
 }
 
 
@@ -24,6 +24,7 @@ body {
 
 /* Banner container */
 .banner {
+    height: auto;
     display: flex; /* Horizontal alignment of children (logo and text) */
     align-items: center; /* Center items vertically */
     padding: 15px; /* Add spacing inside the banner */
@@ -53,7 +54,7 @@ body {
 
 
 .banner-text h1 {
-    font-size: 2.5rem; /* Adjust heading size */
+    font-size: 2.0rem; /* Adjust heading size - Changing this messes with Nav bar active box sizing*/
 }
 
 
@@ -67,7 +68,11 @@ body {
     background-color: #333; /* Dark background color */
     overflow: hidden; /* Prevents overflow issues */
     display: flex;
-    padding: 0.5rem 1rem;
+    align-items: center;
+    padding: 0;
+    border-bottom: 2px solid #ccc; /* Optional border */
+    box-sizing: border-box;
+    height: 60px;
 }
 
 
@@ -75,17 +80,14 @@ body {
     float: left;
     display: block; /* display: flex; ---appears too cramped*/
     color: white; /* Light text color for contrast */
-    text-align: center;
-    padding: 0.5rem 1rem;
+    text-align: center; /* Vertically center items in the navbar */
+    padding: 0.75rem;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 1rem;
     align-items: center;
-}
-
-
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
+    line-height: 2; /* Ensures the text aligns properly */
+    box-sizing: border-box;
+    height: 100%;
 }
 
 
@@ -95,33 +97,45 @@ body {
     font-weight: bold;
 }
 
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
 
 .topnav .icon {
     display: none;
 }
 
 
+/* Mobile Menu */
 @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {display: none;}
+    /* Hide all but the first link */
+    .topnav a:not(:first-child) { display: none; }
+
+    /* Position the hamburger menu icon */
     .topnav a.icon {
-    float: right;
-    display: block;
+        float: right;
+        display: block;
     }
-}
 
-
-@media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
+    /* Adjust layout when responsive */
+    .topnav.responsive {
+        position: relative;
+    }
     .topnav.responsive .icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
     }
     .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
+        float: none;
+        display: block;
+        text-align: left;
     }
+
+    /* Hide text and adjust icon spacing */
+    .nav-text { display: none; }
+    .nav-icon { margin-right: 0; }
 }
 
 
@@ -131,25 +145,13 @@ body {
 }
 
 
-/* Changes for smaller screens (<600px) */
-@media screen and (max-width: 600px) {
-    .nav-text {
-        display: none; /* Hide text */
-    }
-
-
-    .nav-icon {
-        margin-right: 0; /* Remove unnecessary spacing */
-    }
-}
-
-
 section{
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 .container{
     margin-top: 2rem;
@@ -170,29 +172,32 @@ section{
 .container h2{
     margin-top: 3%;
     font-size: 3em;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 
 .container p, ul{
-margin-top: 2%;
-font-size: 1.5rem;
+    margin-top: 2%;
+    font-size: 1.5rem;
 }
 
 
 #intro {
-background-image: url(../images/pinkbg.png);
-background-repeat: round;
+    margin-top: 62px;
+    background-image: url(../images/pinkbg.png);
+    background-repeat: round;
+    background-size: cover; /* Ensures the image scales properly */
+    padding: 20px; /* Adds space inside the section */
+    clear: both; /* Clears any floating elements above */
 }
 
 
 #about{
-background-color: bisque;
+    background-color: bisque;
 }
 
 
 #contact{
-background-color: blanchedalmond;
+    background-color: blanchedalmond;
 }
 
 footer {
