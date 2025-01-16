@@ -20,8 +20,6 @@
         
         <!-- <link rel="manifest" href="static/manifest.json" /> -->
         <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.png"> -->
-
-        
     </head>
     <body>
         <header>
@@ -57,14 +55,47 @@
             </nav>
         </header>
         <main>
-        <!-- {% include "partials/menu.html" %} -->
-        <!-- {% block content %}{% endblock %} -->
-            <section id="intro">
-                <div class="container">
-                    <img src="../static/images/doggo.jpg" alt="Image of Doggo">
-                    <h2>My name is Doggo</h2>
-                    <i class="fa-solid fa-thumbs-up fa-5x"></i>
-                </div> 
+            <!-- {% include "partials/menu.html" %} -->
+            <!-- {% block content %}{% endblock %} -->
+        <!-- Page Heading -->
+            <section id="page-heading">
+                <div class="title-container">
+                    <h1 class="page-heading">Australian Bird Sightings</h1> <!-- New major heading -->
+                </div>
+            </section>
+
+            <!-- Subheading (Changes per Page) -->
+            <section id="page-subheading">
+                <div class="title-container">
+                    <h2 class="minor-heading">--- ALL SIGHTINGS ---</h2> <!-- Subheading changes for each page -->
+                </div>
+            </section>
+            <!-- Grid of all bird species -->
+            <section id="bird-sightings">
+                <div class="grid-container">
+                    <!-- Each bird record -->
+                    <div class="bird-record">
+                        <img src="../static/images/birds/rainbow_lorikeet.jpg" alt="Rainbow Lorikeet" class="bird-image">
+                        <h3 class="bird-name">Rainbow Lorikeet</h3>
+                        <a href="bird1_profile.html" class="profile-link">Profile</a>
+                    </div>
+                    <div class="bird-record">
+                        <img src="../static/images/birds/austrlian_king-parrot.jpg" alt="Austrlian King-Parrot" class="bird-image">
+                        <h3 class="bird-name">Austrlian King-Parrot</h3>
+                        <a href="bird2_profile.html" class="profile-link">Profile</a>
+                    </div>
+                    <div class="bird-record">
+                        <img src="../static/images/birds/grey_butcherbird.jpg" alt="Grey Butcherbird" class="bird-image">
+                        <h3 class="bird-name">Grey Butcherbird</h3>
+                        <a href="bird3_profile.html" class="profile-link">Profile</a>
+                    </div>
+                        <div class="bird-record">
+                        <img src="../static/images/birds/pied_currawong.jpg" alt="Pied Currawong" class="bird-image">
+                        <h3 class="bird-name">Pied Currawong</h3>
+                        <a href="bird4_profile.html" class="profile-link">Profile</a>
+                    </div>
+                    <!-- Add more records as needed -->
+                </div>
             </section>
 
             <section id="about">
@@ -79,23 +110,11 @@
                 </div>
             </section>
 
-            <section id="contact">
-                <div class="container">
-                    <h1>Contact me</h1>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nam, laudantium.</p>
-                    <ul>
-                        <li>Email ID</li>
-                        <li>Insta ID</li>
-                        <li>Facebook ID</li>
-                    </ul>
-                </div>
-            </section>
-
         </main>
         <!-- <script src="static/js/app.js"></script> -->
         <!-- Should this move to below footer? - TBC -->
         <footer>
-            <p>&copy; Copyright 2022 Doggo Co Ltd.</p>
+            <p>&copy; Copyright 2025 C. Weatherby.</p>
         </footer>
     </body>
 </html>

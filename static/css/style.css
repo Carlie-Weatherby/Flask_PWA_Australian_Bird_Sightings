@@ -1,5 +1,6 @@
 html {
     font-size: 16px;  /* The root font size for rem units */
+    background-color: #f0efef;  /* Light grey background */
 }
 
 
@@ -11,7 +12,7 @@ html {
 
 
 header{
-    height: 120px;
+    height: auto;
 }
 
 
@@ -97,10 +98,12 @@ body {
     font-weight: bold;
 }
 
+
 .topnav a:hover {
     background-color: #ddd;
     color: black;
 }
+
 
 .topnav .icon {
     display: none;
@@ -146,10 +149,12 @@ body {
 
 
 section{
-    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; /* Align headings vertically */
+    text-align: center; /* Centers the text */
+    margin-bottom: 10px; /* Adds space between sections */
 }
 
 
@@ -181,24 +186,103 @@ section{
 }
 
 
-#intro {
-    margin-top: 62px;
-    background-image: url(../images/pinkbg.png);
-    background-repeat: round;
-    background-size: cover; /* Ensures the image scales properly */
-    padding: 20px; /* Adds space inside the section */
-    clear: both; /* Clears any floating elements above */
-}
-
-
 #about{
     background-color: bisque;
 }
 
 
-#contact{
-    background-color: blanchedalmond;
+/* Container for the title */
+.title-container {
+    text-align: center;
 }
+
+
+/* Page Heading (major) */
+.page-heading {
+    font-size: 2.5rem;   /* Large font size for the major heading */
+    font-weight: bold;   /* Makes the text bold */
+    color: #333;         /* Dark color for readability */
+}
+
+
+/* Minor Heading (Page subheading) */
+.minor-heading {
+    font-size: 1.5rem;
+    color: #666;        
+    font-weight: normal; 
+}
+
+
+/* Optional: Adding some space between the headings and the content */
+#page-heading, #page-subheading {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+/* Responsive Design: Adjust font sizes for smaller screens */
+@media screen and (max-width: 600px) {
+    .major-heading {
+        font-size: 2rem;
+    }
+
+    .minor-heading {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* Grid Container for Bird Records */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 items per row on a laptop */
+    gap: 20px;
+    padding: 20px;
+    justify-items: center; /* Centers the content within each grid item */
+}
+
+/* Each bird record box */
+.bird-record {
+    background-color: #f8f8f8; /* Light background color */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 250px; /* Set width for consistency */
+}
+
+.bird-image {
+    width: 100%; /* Make image take up the full width of the box */
+    height: auto;
+    border-radius: 8px; /* Optional: rounds the image corners */
+}
+
+.bird-name {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.profile-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #04AA6D;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.profile-link:hover {
+    background-color: #028C57; /* Darker shade for hover effect */
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 item per row on mobile */
+    }
+}
+
+
 
 footer {
     line-height: 40px;
