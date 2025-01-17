@@ -44,18 +44,19 @@ body {
 
 /* Banner text container */
 .banner-text {
+    font-family: "Montserrat", Roboto;
     flex-grow: 1; /* Allows the text container to take up remaining space */
     display: flex; /* Enable flexbox for text container */
     flex-direction: column; /* Stack h1 and h2 vertically */
     justify-content: center; /* Center vertically */
     align-items: center; /* Center horizontally */
     text-align: center; /* Ensure the text itself is center-aligned */
-    color: black; /* Set text color for all children */
+    color: black; 
 }
 
 
 .banner-text h1 {
-    font-size: 2.0rem; /* Adjust heading size - Changing this messes with Nav bar active box sizing*/
+    font-size: 3.0rem; /* Adjust heading size - Changing this messes with Nav bar active box sizing*/
 }
 
 
