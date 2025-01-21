@@ -34,7 +34,7 @@
 
             <!-- Navigation Bar -->
             <nav class="topnav" id="myTopnav">
-                <a href="index.html" class="active" aria-label="Home page">
+                <a href="index.html" aria-label="Home page">
                     <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
                 </a>
                 <a href="search_sightings.html" aria-label="Search Sightings page">
@@ -67,10 +67,35 @@
             <!-- Subheading (Changes per Page) -->
             <section id="page-subheading">
                 <div class="title-container">
-                    <h2 class="minor-heading">--- ALL SIGHTINGS ---</h2> <!-- Subheading changes for each page -->
+                    <h2 class="minor-heading">--- SEARCH MY SIGHTINGS 🔍 ---</h2> <!-- Subheading changes for each page -->
                 </div>
             </section>
-            <!-- Grid of all bird species -->
+
+            <!-- Add a search button here -->
+            <section id="search-section">
+                <form id="search-form">
+                    <!-- Label and Dropdown -->
+                    <label for="search-type">Search type: </label>
+                    <select id="search-type" name="search-type">
+                        <option value="">- None -</option>
+                        <option value="all">All Sightings</option>
+                        <option value="common-name">By Species - Common name</option>
+                        <option value="scientific-name">By Species - Scientific name</option>
+                        <option value="family">By Family</option>
+                        <option value="bird-type">By Bird Type</option>
+                        <option value="abundance">By Bird Abundance</option>
+                        <option value="movement">By Bird Movement</option>
+                        <option value="date">By Date</option>
+                    </select>
+                </form>
+            </section>
+
+            <!-- Placeholder for the chosen search type -->
+            <div id="chosen-search-type" class="chosen-type">
+                Chosen Search Type: <span id="search-result">None</span>
+            </div>
+
+            <!-- Grid of all bird species  - IN FUTURE GET FROM MY DATABASE -->
             <section id="bird-sightings">
                 <div class="grid-container">
                     <!-- Each bird record -->
@@ -116,5 +141,11 @@
         <footer>
             <p>&copy; Copyright 2025 C. Weatherby.</p>
         </footer>
+        
+        <!-- Link to the JavaScript file -->
+        <script src="../static/js/search.js"></script>
+
+        <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+
     </body>
 </html>
