@@ -71,11 +71,19 @@
                 </div>
             </section>
 
-            <!-- Add a search button here -->
+            <!-- Search button with label -->
             <section id="search-section">
                 <form id="search-form">
-                    <!-- Label and Dropdown -->
+                    <!-- Label for Dropdown -->
+                    <!--The value of for (in this case, search-type) must match the id of the associated form element. CFW-->
+                    <!--for="search-type" - ensures the label works correctly.-->
                     <label for="search-type">Search type: </label>
+                    
+                    <!--The id uniquely identifies this specific dropdown element in the document. CFW-->
+                    <!--It’s essential for connecting the <label> via the for attribute and for selecting the element in JavaScript or CSS. CFW-->
+                    <!-- Dropdown -->
+                    <!--id="search-type" - makes the dropdown identifiable for JavaScript and CSS.-->
+                    <!--name="search-type" - ensures the backend knows what data is being submitted..-->
                     <select id="search-type" name="search-type">
                         <option value="">- None -</option>
                         <option value="all">All Sightings</option>
@@ -142,7 +150,7 @@
             <p>&copy; Copyright 2025 C. Weatherby.</p>
         </footer>
         
-        <!-- Link to the JavaScript file -->
+        
         <script src="../static/js/search.js"></script>
 
         <script src="{{ url_for('static', filename='js/search.js') }}"></script>
