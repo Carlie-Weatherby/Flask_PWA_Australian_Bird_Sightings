@@ -51,6 +51,7 @@
 --     ('1002', 'Zanda', 'Australian Cockatoos'),
 --     ('1001', 'Dacelo', 'Kookaburras');
 
+
 --  CREATE TABLE birdType (
 --     type_id INTEGER PRIMARY KEY AUTOINCREMENT,
 --     type_code TEXT NOT NULL,
@@ -64,6 +65,28 @@
 -- VALUES
 --     ('E', 'An endemic species recorded only in Australia.'),
 --     ('Br. E', 'A breeding endemic species recorded beyond Australia in certain seasons, e.g. Short-tailed Shearwater.');
+
+
+-- CREATE TABLE birdAbundance (
+--     abundance_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     abundance_code TEXT NOT NULL,
+--     description TEXT NOT NULL
+--     );
+
+-- INSERT INTO birdAbundance(abundance_code, description)
+-- VALUES ('A', 'Abundant');
+
+INSERT INTO birdAbundance(abundance_code, description)
+VALUES
+    ('LA', 'Locally abundant'),
+    ('C', 'Common'),
+    ('MC', 'Moderately common'),
+    ('LC', 'Locally common'),
+    ('LMC', 'Locally moderately common'),
+    ('UC', 'Uncommon'),
+    ('LUC', 'Locally uncommon'),
+    ('R', 'Rare'),
+    ('V', 'Vagrant');
 
 -- CREATE TABLE birdSpecies (
 --     species_id INTEGER PRIMARY KEY AUTOINCREMENT,
