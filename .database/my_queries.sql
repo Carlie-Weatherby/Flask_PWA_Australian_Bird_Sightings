@@ -76,17 +76,35 @@
 -- INSERT INTO birdAbundance(abundance_code, description)
 -- VALUES ('A', 'Abundant');
 
-INSERT INTO birdAbundance(abundance_code, description)
+-- INSERT INTO birdAbundance(abundance_code, description)
+-- VALUES
+--     ('LA', 'Locally abundant'),
+--     ('C', 'Common'),
+--     ('MC', 'Moderately common'),
+--     ('LC', 'Locally common'),
+--     ('LMC', 'Locally moderately common'),
+--     ('UC', 'Uncommon'),
+--     ('LUC', 'Locally uncommon'),
+--     ('R', 'Rare'),
+--     ('V', 'Vagrant');
+
+
+-- CREATE TABLE birdMovement (
+--     movement_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     movement_code TEXT NOT NULL,
+--     description TEXT NOT NULL,
+--     movement_icon TEXT NOT NULL -- This will store emojis as Unicode text
+--     );
+
+-- INSERT INTO birdMovement(movement_code, description, movement_icon)
+-- VALUES ('AM', 'Annual migrant', '🔃');
+
+INSERT INTO birdMovement(movement_code, description, movement_icon)
 VALUES
-    ('LA', 'Locally abundant'),
-    ('C', 'Common'),
-    ('MC', 'Moderately common'),
-    ('LC', 'Locally common'),
-    ('LMC', 'Locally moderately common'),
-    ('UC', 'Uncommon'),
-    ('LUC', 'Locally uncommon'),
-    ('R', 'Rare'),
-    ('V', 'Vagrant');
+    ('PM', 'Partial migrant', '⤵️'),
+    ('N', 'Nomadic', '*️⃣'),
+    ('S', 'Sedentary', '⏺️');
+
 
 -- CREATE TABLE birdSpecies (
 --     species_id INTEGER PRIMARY KEY AUTOINCREMENT,
