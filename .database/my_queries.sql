@@ -51,14 +51,38 @@
 --     ('1002', 'Zanda', 'Australian Cockatoos'),
 --     ('1001', 'Dacelo', 'Kookaburras');
 
+--  CREATE TABLE birdType (
+--     type_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     type_code TEXT NOT NULL,
+--     description TEXT NOT NULL
+--     );
+
+-- INSERT INTO birdType(type_code, description)
+-- VALUES ('Intro.', 'A bird species deliberately introduced in Australia');
+
+-- INSERT INTO birdType(type_code, description)
+-- VALUES
+--     ('E', 'An endemic species recorded only in Australia.'),
+--     ('Br. E', 'A breeding endemic species recorded beyond Australia in certain seasons, e.g. Short-tailed Shearwater.');
+
+-- CREATE TABLE birdSpecies (
+--     species_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     genus_id INTEGER NOT NULL,
+--     scientific_name TEXT NOT NULL,
+
+--     FOREIGN KEY (genus_id) REFERENCES birdGenera(genus_id)
+--     );
+
+
+
 
 -- *** QUERIES ***
-SELECT birdGenera.*
-FROM birdGenera
-INNER JOIN birdFamilies ON birdGenera.family_id = birdFamilies.family_id
-WHERE birdFamilies.family_name_latin = 'Artamidae';
-
-
--- SELECT * FROM birdFamilies
+-- SELECT * FROM birdGenera;
 -- WHERE family_id=1002;
+
 -- LIMIT 3;
+
+-- SELECT birdGenera.*
+-- FROM birdGenera
+-- INNER JOIN birdFamilies ON birdGenera.family_id = birdFamilies.family_id
+-- WHERE birdFamilies.family_name_latin = 'Artamidae';
