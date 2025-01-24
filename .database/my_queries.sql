@@ -42,21 +42,21 @@
 -- INSERT INTO birdGenera(family_id, genus_name, description)
 -- VALUES ('1005', 'Chroicocephalus', 'Masked Gulls and Allies')
 
-INSERT INTO birdGenera(family_id, genus_name, description)
-VALUES
-    ('1002', 'Trichoglossus', 'Rainbow Lorikeets and Allies'),
-    ('1003', 'Cracticus', 'Typical Butcherbirds'),
-    ('1003', 'Strepera', 'Currawongs'),
-    ('1004', 'Pelecanus', 'Pelicans'),
-    ('1002', 'Zanda', 'Australian Cockatoos'),
-    ('1001', 'Dacelo', 'Kookaburras');
+-- INSERT INTO birdGenera(family_id, genus_name, description)
+-- VALUES
+--     ('1002', 'Trichoglossus', 'Rainbow Lorikeets and Allies'),
+--     ('1003', 'Cracticus', 'Typical Butcherbirds'),
+--     ('1003', 'Strepera', 'Currawongs'),
+--     ('1004', 'Pelecanus', 'Pelicans'),
+--     ('1002', 'Zanda', 'Australian Cockatoos'),
+--     ('1001', 'Dacelo', 'Kookaburras');
 
 
 -- *** QUERIES ***
--- SELECT birdGenera.*
--- FROM birdGenera
--- INNER JOIN birdFamilies ON birdGenera.family_id = birdFamilies.family_id
--- WHERE birdFamilies.family_name_latin = 'Artamidae';
+SELECT birdGenera.*
+FROM birdGenera
+INNER JOIN birdFamilies ON birdGenera.family_id = birdFamilies.family_id
+WHERE birdFamilies.family_name_latin = 'Artamidae';
 
 
 -- SELECT * FROM birdFamilies
