@@ -40,16 +40,16 @@
 -- VALUES('family id', 'genus name', 'description of genus');
 
 -- INSERT INTO birdGenera(family_id, genus_name, description)
--- VALUES ('1005', 'Chroicocephalus', 'Masked Gulls and Allies')
+-- VALUES (1005, 'Chroicocephalus', 'Masked Gulls and Allies')
 
--- INSERT INTO birdGenera(family_id, genus_name, description)
--- VALUES
---     ('1002', 'Trichoglossus', 'Rainbow Lorikeets and Allies'),
---     ('1003', 'Cracticus', 'Typical Butcherbirds'),
---     ('1003', 'Strepera', 'Currawongs'),
---     ('1004', 'Pelecanus', 'Pelicans'),
---     ('1002', 'Zanda', 'Australian Cockatoos'),
---     ('1001', 'Dacelo', 'Kookaburras');
+INSERT INTO birdGenera(family_id, genus_name, description)
+VALUES
+    (1002, 'Trichoglossus', 'Rainbow Lorikeets and Allies'),
+    (1003, 'Cracticus', 'Typical Butcherbirds'),
+    (1003, 'Strepera', 'Currawongs'),
+    (1004, 'Pelecanus', 'Pelicans'),
+    (1002, 'Zanda', 'Australian Cockatoos'),
+    (1001, 'Dacelo', 'Kookaburras');
 
 
 --  CREATE TABLE birdType (
@@ -99,23 +99,45 @@
 -- INSERT INTO birdMovement(movement_code, description, movement_icon)
 -- VALUES ('AM', 'Annual migrant', '🔃');
 
-INSERT INTO birdMovement(movement_code, description, movement_icon)
-VALUES
-    ('PM', 'Partial migrant', '⤵️'),
-    ('N', 'Nomadic', '*️⃣'),
-    ('S', 'Sedentary', '⏺️');
+-- INSERT INTO birdMovement(movement_code, description, movement_icon)
+-- VALUES
+--     ('PM', 'Partial migrant', '⤵️'),
+--     ('N', 'Nomadic', '*️⃣'),
+--     ('S', 'Sedentary', '⏺️');
 
 
 -- CREATE TABLE birdSpecies (
 --     species_id INTEGER PRIMARY KEY AUTOINCREMENT,
---     genus_id INTEGER NOT NULL,
+--     genus_id INTEGER NOT NULL, -- foreign key
 --     scientific_name TEXT NOT NULL,
-
---     FOREIGN KEY (genus_id) REFERENCES birdGenera(genus_id)
+--     common_name TEXT NOT NULL,
+--     type_id INTEGER NOT NULL, -- foreign key
+--     abundance_id INTEGER NOT NULL, -- foreign key
+--     movement_id INTEGER NOT NULL, -- foreign key
+--     description TEXT NOT NULL,
+--     size_avg_min INTEGER,
+--     size_avg_max INTEGER,
+--     size_unit TEXT,
+--     jouvenile TEXT,
+--     voice TEXT,
+--     habitat TEXT,
+--     image_bird1_path TEXT,
+--     image_bird1_desc TEXT,
+--     image_bird2_path TEXT,
+--     image_bird2_desc TEXT,
+--     image_bird3_path TEXT,
+--     image_bird3_desc TEXT,
+--     image_map1_path TEXT,
+--     image_map1_desc TEXT,
+--     audio_call1_path TEXT,
+--     FOREIGN KEY (genus_id) REFERENCES birdGenera(genus_id),
+--     FOREIGN KEY (type_id) REFERENCES birdType(type_id),
+--     FOREIGN KEY (abundance_id) REFERENCES birdAbundance(abundance_id),
+--     FOREIGN KEY (movement_id) REFERENCES birdMovement(movement_id)
 --     );
 
-
-
+INSERT INTO birdSpecies(genus_id, scientific_name, common_name, type_id, abundance_id, movement_id, description, size_avg_min, size_avg_max, size_unit, jouvenile, voice, habitat, image_bird1_path, image_bird1_desc, image_bird2_path, image_bird2_desc, image_bird3_path, image_bird3_desc, image_map1_path, image_map1_desc, audio_call1_path)
+VALUES (1007, 'Dacelo novaeguineae 'Laughing Kookaburra', '🔃');
 
 -- *** QUERIES ***
 -- SELECT * FROM birdGenera;
