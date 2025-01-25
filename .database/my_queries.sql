@@ -25,6 +25,12 @@
 -- ALTER TABLE birdFamily RENAME COLUMN common_family_name TO family_name_latin;
 -- ALTER TABLE birdFamily RENAME TO birdFamilies;
 -- UPDATE birdFamilies SET family_name_latin = 'Artamidae' WHERE family_id = 1003;
+-- ALTER TABLE birdSpecies RENAME COLUMN jouvenile TO juvenile;
+-- DROP TABLE birdSpecies;
+
+
+
+
 
 -- CREATE TABLE birdGenera (
 --     genus_id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -42,14 +48,14 @@
 -- INSERT INTO birdGenera(family_id, genus_name, description)
 -- VALUES (1005, 'Chroicocephalus', 'Masked Gulls and Allies')
 
-INSERT INTO birdGenera(family_id, genus_name, description)
-VALUES
-    (1002, 'Trichoglossus', 'Rainbow Lorikeets and Allies'),
-    (1003, 'Cracticus', 'Typical Butcherbirds'),
-    (1003, 'Strepera', 'Currawongs'),
-    (1004, 'Pelecanus', 'Pelicans'),
-    (1002, 'Zanda', 'Australian Cockatoos'),
-    (1001, 'Dacelo', 'Kookaburras');
+-- INSERT INTO birdGenera(family_id, genus_name, description)
+-- VALUES
+--     (1002, 'Trichoglossus', 'Rainbow Lorikeets and Allies'),
+--     (1003, 'Cracticus', 'Typical Butcherbirds'),
+--     (1003, 'Strepera', 'Currawongs'),
+--     (1004, 'Pelecanus', 'Pelicans'),
+--     (1002, 'Zanda', 'Australian Cockatoos'),
+--     (1001, 'Dacelo', 'Kookaburras');
 
 
 --  CREATE TABLE birdType (
@@ -111,14 +117,14 @@ VALUES
 --     genus_id INTEGER NOT NULL, -- foreign key
 --     scientific_name TEXT NOT NULL,
 --     common_name TEXT NOT NULL,
---     type_id INTEGER NOT NULL, -- foreign key
---     abundance_id INTEGER NOT NULL, -- foreign key
---     movement_id INTEGER NOT NULL, -- foreign key
+--     type_id INTEGER, -- foreign key
+--     abundance_id INTEGER, -- foreign key
+--     movement_id INTEGER, -- foreign key
 --     description TEXT NOT NULL,
 --     size_avg_min INTEGER,
 --     size_avg_max INTEGER,
 --     size_unit TEXT,
---     jouvenile TEXT,
+--     juvenile TEXT,
 --     voice TEXT,
 --     habitat TEXT,
 --     image_bird1_path TEXT,
@@ -136,8 +142,102 @@ VALUES
 --     FOREIGN KEY (movement_id) REFERENCES birdMovement(movement_id)
 --     );
 
-INSERT INTO birdSpecies(genus_id, scientific_name, common_name, type_id, abundance_id, movement_id, description, size_avg_min, size_avg_max, size_unit, jouvenile, voice, habitat, image_bird1_path, image_bird1_desc, image_bird2_path, image_bird2_desc, image_bird3_path, image_bird3_desc, image_map1_path, image_map1_desc, audio_call1_path)
-VALUES (1007, 'Dacelo novaeguineae 'Laughing Kookaburra', '🔃');
+INSERT INTO birdSpecies(
+    genus_id,
+    scientific_name,
+    common_name,
+    type_id,
+    abundance_id,
+    movement_id,
+    description,
+    size_avg_min,
+    size_avg_max,
+    size_unit,
+    juvenile,
+    voice,
+    habitat,
+    image_bird1_path,
+    image_bird1_desc,
+    image_bird2_path,
+    image_bird2_desc,
+    image_bird3_path,
+    image_bird3_desc,
+    image_map1_path,
+    image_map1_desc,
+    audio_call1_path
+) VALUES (
+    1007,
+    'Dacelo novaeguineae',
+    'Laughing Kookaburra',
+    1002,
+    1003,
+    1004,
+    'Largest kookaburra. Families 4-8 birds. White wing-patches in heavy direct flight. Tail up on alighting, slowly lowered. Massive bill, black above, horn below. Dark eye-stripe. Large, pale head; brown spots, crown patch. Back, wings, brown; wings mottled pale blue. Often blue rump. Tail barred ruffous-brown and black; edged white. Plain white below. **M br.** Centre rump bright blue. Race minor (B) Smaller. **F** Brown or pale blue rump; head more buff', 
+    40,
+    48,
+    'cm',
+    'More barred, washed warm-brown. All black bill. **Imm** As female.',
+    'Raucous "koo-koo-ka-ka-kook" chorus; warning "kooaa".',
+    'Open forest, woodland.',
+    '../static/images/birds/laughing_kookaburra_by_Shane_Little.jpg',
+    'Male and female Laughing Kookaburra sitting on a tree together. Photograph by Shane Little.',
+    '../static/images/birds/laughing_kookaburra_2.jpg',
+    'Midshot view of an adult laughing kookaburra, left profile view.',
+    NULL,
+    NULL,
+    '../static/images/birds/maps/map-laughing_kookaburra.png',
+    'Distribution map - Laughing kookaburra.', 
+    '../static/audio/Laughing_Kookaburra.mp3'
+);
+
+
+-- INSERT INTO birdSpecies(
+--     genus_id,
+--     scientific_name,
+--     common_name,
+--     type_id,
+--     abundance_id,
+--     movement_id,
+--     description,
+--     size_avg_min,
+--     size_avg_max,
+--     size_unit,
+--     juvenile,
+--     voice,
+--     habitat,
+--     image_bird1_path,
+--     image_bird1_desc,
+--     image_bird2_path,
+--     image_bird2_desc,
+--     image_bird3_path,
+--     image_bird3_desc,
+--     image_map1_path,
+--     image_map1_desc,
+--     audio_call1_path
+-- ) VALUES (
+--     1002,
+--     'Trichoglossus moluccanus',
+--     'Rainbow Lorikeet',
+--     1002,
+--     1003,
+--     1004,
+--     'Largest kookaburra. Families 4-8 birds. White wing-patches in heavy direct flight. Tail up on alighting, slowly lowered. Massive bill, black above, horn below. Dark eye-stripe. Large, pale head; brown spots, crown patch. Back, wings, brown; wings mottled pale blue. Often blue rump. Tail barred ruffous-brown and black; edged white. Plain white below. **M br.** Centre rump bright blue. Race minor (B) Smaller. **F** Brown or pale blue rump; head more buff', 
+--     40,
+--     48,
+--     'cm',
+--     'More barred, washed warm-brown. All black bill. **Imm** As female.',
+--     'Raucous "koo-koo-ka-ka-kook" chorus; warning "kooaa".',
+--     'Open forest, woodland.',
+--     '../static/images/birds/laughing_kookaburra_by_Shane_Little.jpg',
+--     'Male and female Laughing Kookaburra sitting on a tree together. Photograph by Shane Little.',
+--     '../static/images/birds/laughing_kookaburra_2.jpg',
+--     'Midshot view of an adult laughing kookaburra, left profile view.',
+--     NULL,
+--     NULL,
+--     '../static/images/birds/maps/map-laughing_kookaburra.png',
+--     'Distribution map - Laughing kookaburra.', 
+--     '../static/audio/Laughing_Kookaburra.mp3'
+-- );
 
 -- *** QUERIES ***
 -- SELECT * FROM birdGenera;
