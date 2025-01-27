@@ -2,7 +2,11 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <!-- Ensure Internet Explorer uses the latest rendering engine -->
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        
         <!-- Content Security Policy (CSP):
         Allows Font Awesome to load securely. Includes:
         - 'script-src': Permits scripts from 'self' and Font Awesome servers.
@@ -13,13 +17,18 @@
         <title>Carlie's Australian Bird Sightings</title>
 
         <link rel="stylesheet" href="../static/css/style.css" />
+        
         <!-- Font Awesome Icons -->
         <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
+        
         <!-- Google Fonts: Roboto and Montserrat-->
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
-        <!-- <link rel="manifest" href="static/manifest.json" /> -->
-        <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.png"> -->
+        
+        <!-- Links the Web App Manifest for PWA functionality -->
+        <link rel="manifest" href="../static/manifest.webmanifest" /> <!-- Updated from .json to .webmanifest to meet w3C stds. -->
+        <!-- Defines the favicon for the browser tab -->
+        <link rel="icon" type="image/x-icon" href="../static/images/CABS_logo_favicon_540.png">
     </head>
     <body>
         <header>
