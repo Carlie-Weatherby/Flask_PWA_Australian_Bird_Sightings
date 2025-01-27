@@ -16,7 +16,7 @@
         
         <title>Carlie's Australian Bird Sightings</title>
 
-        <link rel="stylesheet" href="../static/css/style.css" />
+        <link rel="stylesheet" href="/static/css/style.css" />
         
         <!-- Font Awesome Icons -->
         <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
@@ -27,17 +27,28 @@
         
         <!-- Links the Web App Manifest for PWA functionality -->
         <link rel="manifest" href="../static/manifest.webmanifest" /> <!-- Updated from .json to .webmanifest to meet w3C stds. -->
-        <!-- Defines the favicon for the browser tab -->
-        <link rel="icon" type="image/x-icon" href="../static/images/CABS_logo_favicon_540.png">
+        
+        <!-- Defines the favicons for the browser tab; various sizes -->
+        <link rel="icon" type="image/png" href="/static/images/icon/icon-512x512.png">
+        <link rel="icon" type="image/png" href="/static/images/icon/icon-384x384.png">
+        <link rel="icon" type="image/png" href="/static/images/icon/icon-192x192.png">
+        <link rel="icon" type="image/png" href="/static/images/icon/icon-128x128.png">
     </head>
-
     <body>
-        <!-- Main area with re-usable menu and dynamic content -->
+        <!-- Header area with the banner and navigation menu -->
+        {% include "partials/menu.html" %}
+        
+        <!-- Main area with dynamic content -->
         <main>
-            {% include "partials/menu.html" %}
             {% block content %}{% endblock %}
         </main>
+        
+        <footer>
+            <p>&copy; Copyright 2025 C. Weatherby.</p>
+        </footer>
+
         <!-- Links the main JavaScript file -->
-        <script src="../static/js/app.js"></script>
+        <script src="/static/js/search.js"></script> <!-- I don't have this file yet - I have search.js ??? -->
     </body>
 </html>
+

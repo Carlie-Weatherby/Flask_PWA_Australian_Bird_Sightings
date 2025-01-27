@@ -1,129 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
-        <!-- Ensure Internet Explorer uses the latest rendering engine -->
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        
-        <!-- Content Security Policy (CSP):
-        Allows Font Awesome to load securely. Includes:
-        - 'script-src': Permits scripts from 'self' and Font Awesome servers.
-        - 'style-src': Permits inline styles ('unsafe-inline') and Font Awesome styles.
-        Used cautiously to enable icons while minimizing risks. -->
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://kit.fontawesome.com; style-src 'self' https://kit.fontawesome.com 'unsafe-inline'; default-src 'self' https:;">
-        
-        <title>Carlie's Australian Bird Sightings</title>
+{% extends "layout.html" %}
 
-        <link rel="stylesheet" href="../static/css/style.css" />
-        
-        <!-- Font Awesome Icons -->
-        <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
-        
-        <!-- Google Fonts: Roboto and Montserrat-->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
-        
-        <!-- Links the Web App Manifest for PWA functionality -->
-        <link rel="manifest" href="../static/manifest.webmanifest" /> <!-- Updated from .json to .webmanifest to meet w3C stds. -->
-        <!-- Defines the favicon for the browser tab -->
-        <link rel="icon" type="image/x-icon" href="../static/images/CABS_logo_favicon_540.png">
-    </head>
-    <body>
-        <header>
-            <!-- Banner -->
-            <div class="banner">
-                <img src="../static/images/CABS_logo_1080.png" alt="Logo" class="logo" />
-                <div class="banner-text">
-                    <h1>Australian Birds</h1>
-                    <h2>- Carlie's Sightings -</h2>
-                </div>
+{% block title %}
+Carlie's Bird Sightings Homepage
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Page Heading -->
+    <section id="page-heading">
+        <div class="title-container">
+            <h1 class="page-heading">Australian Bird Sightings</h1> <!-- New major heading -->
+        </div>
+    </section>
+
+    <!-- Subheading (Changes per Page) -->
+    <section id="page-subheading">
+        <div class="title-container">
+            <h2 class="minor-heading">--- ALL SIGHTINGS ---</h2> <!-- Subheading changes for each page -->
+        </div>
+    </section>
+    
+    <!-- Grid of all bird species -->
+    <section id="bird-sightings">
+        <div class="grid-container">
+            <!-- Each bird record -->
+            <div class="bird-record">
+                <img src="/static/images/birds/rainbow_lorikeet.jpg" alt="Rainbow Lorikeet" class="bird-image">
+                <h3 class="bird-name">Rainbow Lorikeet</h3>
+                <a href="bird1_profile.html" class="profile-link">Profile</a> <!-- Placeholder filename. -->
             </div>
-
-            <!-- Navigation Bar -->
-            <nav class="topnav" id="myTopnav">
-                <a href="index.html" class="active" aria-label="Home page">
-                    <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
-                </a>
-                <a href="search_sightings.html" aria-label="Search Sightings page">
-                    <span class="nav-text"> Search </span>
-                    <span class="nav-icon"><i class="fas fa-search"></i></span>
-                </a>
-                <a href="about.html" aria-label="About page"> 
-                    <span class="nav-text"> About </span>
-                    <span class="nav-icon"><i class="fas fa-info-circle"></i></span>
-                </a>
-                <a href="donate.html" aria-label="Donate page">
-                    <span class="nav-text"> Donate </span>
-                    <span class="nav-icon"><i class="fas fa-hand-holding-usd"></i></span>
-                </a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Toggle navigation menu">
-                    <i class="fa-solid fa-bars"></i> <!-- Hamburger menu icon -->
-                </a>
-            </nav>
-        </header>
-        <main>
-            <!-- {% include "partials/menu.html" %} -->
-            <!-- {% block content %}{% endblock %} -->
-        <!-- Page Heading -->
-            <section id="page-heading">
-                <div class="title-container">
-                    <h1 class="page-heading">Australian Bird Sightings</h1> <!-- New major heading -->
-                </div>
-            </section>
-
-            <!-- Subheading (Changes per Page) -->
-            <section id="page-subheading">
-                <div class="title-container">
-                    <h2 class="minor-heading">--- ALL SIGHTINGS ---</h2> <!-- Subheading changes for each page -->
-                </div>
-            </section>
-            <!-- Grid of all bird species -->
-            <section id="bird-sightings">
-                <div class="grid-container">
-                    <!-- Each bird record -->
-                    <div class="bird-record">
-                        <img src="../static/images/birds/rainbow_lorikeet.jpg" alt="Rainbow Lorikeet" class="bird-image">
-                        <h3 class="bird-name">Rainbow Lorikeet</h3>
-                        <a href="bird1_profile.html" class="profile-link">Profile</a> <!-- Placeholder filename. -->
-                    </div>
-                    <div class="bird-record">
-                        <img src="../static/images/birds/australian_king_parrot_2.jpg" alt="Australian King-Parrot" class="bird-image">
-                        <h3 class="bird-name">Australian King-Parrot</h3>
-                        <a href="bird2_profile.html" class="profile-link">Profile</a>
-                    </div>
-                    <div class="bird-record">
-                        <img src="../static/images/birds/grey_butcherbird.jpg" alt="Grey Butcherbird" class="bird-image">
-                        <h3 class="bird-name">Grey Butcherbird</h3>
-                        <a href="bird3_profile.html" class="profile-link">Profile</a>
-                    </div>
-                        <div class="bird-record">
-                        <img src="../static/images/birds/pied_currawong.jpg" alt="Pied Currawong" class="bird-image">
-                        <h3 class="bird-name">Pied Currawong</h3>
-                        <a href="bird4_profile.html" class="profile-link">Profile</a>
-                    </div>
-                    <!-- Add more records as needed -->
-                </div>
-            </section>
-
-            <section id="about">
-                <div class="container">
-                    <h1>About Me</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, similique?</p>
-                    <ul>
-                        <li>Btech Qualified</li>
-                        <li>Software Engineer</li>
-                        <li>GATE AIR 01</li>
-                    </ul>
-                </div>
-            </section>
-
-        </main>
-        <!-- <script src="static/js/app.js"></script> -->
-        <!-- Should this move to below footer? - TBC -->
-        <footer>
-            <p>&copy; Copyright 2025 C. Weatherby.</p>
-        </footer>
-    </body>
-</html>
+            <div class="bird-record">
+                <img src="/static/images/birds/australian_king_parrot_2.jpg" alt="Australian King-Parrot" class="bird-image">
+                <h3 class="bird-name">Australian King-Parrot</h3>
+                <a href="bird2_profile.html" class="profile-link">Profile</a>
+            </div>
+            <div class="bird-record">
+                <img src="/static/images/birds/grey_butcherbird.jpg" alt="Grey Butcherbird" class="bird-image">
+                <h3 class="bird-name">Grey Butcherbird</h3>
+                <a href="bird3_profile.html" class="profile-link">Profile</a>
+            </div>
+                <div class="bird-record">
+                <img src="/static/images/birds/pied_currawong.jpg" alt="Pied Currawong" class="bird-image">
+                <h3 class="bird-name">Pied Currawong</h3>
+                <a href="bird4_profile.html" class="profile-link">Profile</a>
+            </div>
+            <!-- Add more records as needed -->
+        </div>
+    </section>
+</div>
+{% endblock %}
