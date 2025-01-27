@@ -17,7 +17,10 @@
 --     ('Cockatoos', 'Cacatuidae', 'Parrots, cockatoos'),]
 --     ('Woodswallows, Butcherbirds, Peltops', 'Artamidae', 'Bristlehead, butcherbirds, woodswallows, Mottled Berryhunter, ioras, cuckooshrikes'),
 --     ('Pelicans', 'Pelecanidae', 'Ibises, spoonbills, herons, Hamerkop, Shoebill, pelicans'),
---     ('Gulls, Terns, Skimmers', 'Laridae', 'Noddies, skimmers, gulls, terns, skuas, auks');
+--     ('Gulls, Terns, Skimmers', 'Laridae', 'Noddies, skimmers, gulls, terns, skuas, auks')
+--     ('Old World Parrots', 'Psittaculidae', 'Parrots, cockatoos');
+
+
 
 -- *** COMMANDS I'VE PLAYED WITH (NOT IN OPRDER) ***
 -- DROP TABLE birdFamily;
@@ -27,9 +30,7 @@
 -- UPDATE birdFamilies SET family_name_latin = 'Artamidae' WHERE family_id = 1003;
 -- ALTER TABLE birdSpecies RENAME COLUMN jouvenile TO juvenile;
 -- DROP TABLE birdSpecies;
-
-
-
+-- DELETE FROM birdGenera WHERE genus_id = 1009;
 
 
 -- CREATE TABLE birdGenera (
@@ -55,7 +56,8 @@
 --     (1003, 'Strepera', 'Currawongs'),
 --     (1004, 'Pelecanus', 'Pelicans'),
 --     (1002, 'Zanda', 'Australian Cockatoos'),
---     (1001, 'Dacelo', 'Kookaburras');
+--     (1001, 'Dacelo', 'Kookaburras'),
+--     (1006, 'Alisterus', 'King Parrots');
 
 
 --  CREATE TABLE birdType (
@@ -142,55 +144,6 @@
 --     FOREIGN KEY (movement_id) REFERENCES birdMovement(movement_id)
 --     );
 
-INSERT INTO birdSpecies(
-    genus_id,
-    scientific_name,
-    common_name,
-    type_id,
-    abundance_id,
-    movement_id,
-    description,
-    size_avg_min,
-    size_avg_max,
-    size_unit,
-    juvenile,
-    voice,
-    habitat,
-    image_bird1_path,
-    image_bird1_desc,
-    image_bird2_path,
-    image_bird2_desc,
-    image_bird3_path,
-    image_bird3_desc,
-    image_map1_path,
-    image_map1_desc,
-    audio_call1_path
-) VALUES (
-    1007,
-    'Dacelo novaeguineae',
-    'Laughing Kookaburra',
-    1002,
-    1003,
-    1004,
-    'Largest kookaburra. Families 4-8 birds. White wing-patches in heavy direct flight. Tail up on alighting, slowly lowered. Massive bill, black above, horn below. Dark eye-stripe. Large, pale head; brown spots, crown patch. Back, wings, brown; wings mottled pale blue. Often blue rump. Tail barred ruffous-brown and black; edged white. Plain white below. **M br.** Centre rump bright blue. Race minor (B) Smaller. **F** Brown or pale blue rump; head more buff', 
-    40,
-    48,
-    'cm',
-    'More barred, washed warm-brown. All black bill. **Imm** As female.',
-    'Raucous "koo-koo-ka-ka-kook" chorus; warning "kooaa".',
-    'Open forest, woodland.',
-    '../static/images/birds/laughing_kookaburra_by_Shane_Little.jpg',
-    'Male and female Laughing Kookaburra sitting on a tree together. Photograph by Shane Little.',
-    '../static/images/birds/laughing_kookaburra_2.jpg',
-    'Midshot view of an adult laughing kookaburra, left profile view.',
-    NULL,
-    NULL,
-    '../static/images/birds/maps/map-laughing_kookaburra.png',
-    'Distribution map - Laughing kookaburra.', 
-    '../static/audio/Laughing_Kookaburra.mp3'
-);
-
-
 -- INSERT INTO birdSpecies(
 --     genus_id,
 --     scientific_name,
@@ -215,9 +168,9 @@ INSERT INTO birdSpecies(
 --     image_map1_desc,
 --     audio_call1_path
 -- ) VALUES (
---     1002,
---     'Trichoglossus moluccanus',
---     'Rainbow Lorikeet',
+--     1007,
+--     'Dacelo novaeguineae',
+--     'Laughing Kookaburra',
 --     1002,
 --     1003,
 --     1004,
@@ -239,6 +192,129 @@ INSERT INTO birdSpecies(
 --     '../static/audio/Laughing_Kookaburra.mp3'
 -- );
 
+
+INSERT INTO birdSpecies(
+    genus_id,
+    scientific_name,
+    common_name,
+    type_id,
+    abundance_id,
+    movement_id,
+    description,
+    size_avg_min,
+    size_avg_max,
+    size_unit,
+    juvenile,
+    voice,
+    habitat,
+    image_bird1_path,
+    image_bird1_desc,
+    image_bird2_path,
+    image_bird2_desc,
+    image_bird3_path,
+    image_bird3_desc,
+    image_map1_path,
+    image_map1_desc,
+    audio_call1_path
+) 
+VALUES 
+    (
+        1002,
+        'Trichoglossus moluccanus',
+        'Rainbow Lorikeet',
+        NULL,
+        1003,
+        1003,
+        'Sociable, noisy, acrobatic. Bright red bill. Blue head. Lime-green half-collar. Breast red/ yellow; abdomen blue. Underwing coverts red; yellow underwing bar.',
+        30,
+        30,
+        'cm',
+        'Duller; bill brown.',
+        'Strong, "screet, screet" noisy chattering.',
+        'Rainforest, open forest, woodland, heath, gardens, urban parks.',
+        '../static/images/birds/rainbow_lorikeet.jpg',
+        'Photogrpagh of a Rainbow Lorikeet (full shot) on a small branch; left profile.',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        '../static/images/birds/maps/map-rainbow_lorikeet.png',
+        'Distribution map - Rainbow Lorikeet.', 
+        '../static/audio/Rainbow_Lorikeet.mp3'
+    ),
+    (
+        1003,
+        'Cracticus torquatus',
+        'Grey Butcherbird',
+        1002,
+        1008,
+        1003,
+        'Direct "flat" glide. Strong hooked bill. White lores, half collar. Black head; dark grey back. Black wing, thin white stripe. Black tail; white tip. White below, washed grey. Race cinereus (B) Larger, duskier. Race leucopterus (C) Smaller, lores less white; wing whiter. **F** Duskier.',
+        28,
+        32,
+        'cm',
+        'Dark bill, brown above; buff where adult white or greyish. Mottled brown, buff below. **Imm** Bill-base pale; dusky bird.',
+        'Rich melodious piping.',
+        'Open forest, woodland, mallee, urban farmland.',
+        '../static/images/birds/grey_butcherbird.jpg',
+        'Photogrpagh of a Grey Butcherbird (full shot) on a small branch; right profile.',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        '../static/images/birds/maps/map-grey_butcherbird.png',
+        'Distribution map - Grey Butcherbird.', 
+        '../static/audio/Grey_Butcherbird.mp3'    
+    ),
+    (
+        1004,
+        'Strepera graculina',
+        'Pied Currawong',
+        1002,
+        1003,
+        1003,
+        'Winter flocks. "Rowing" flight when travelling. Robust hooked bill. Yellow eye. Black upper body with prominent white crescent-shaped patch (window or speculum ) on wing. Crescentric "rump" (tail-base) and undertail coverts form broad white ring around base of tail. White tail tip. Sooty-black underparts. **ADD RACE INFO**',
+        41,
+        51,
+        'cm',
+        'Washed brown. Less white on wings, til-base. Pale gape; dark eye gets paler with age.',
+        'Noisy, distinctive, ringing, double-call "curra-wong".',
+        'Open forest, woodland, scrubland, farms, urban.',
+        '../static/images/birds/pied_currawong.jpg',
+        'Photogrpagh of a Pied Currawong (full shot) on a branch; left profile.',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        '../static/images/birds/maps/map-pied_currawong.png',
+        'Distribution map - Pied Currawong.', 
+        '../static/audio/Pied_Currawong.mp3'
+    ),
+    (
+        1004,
+        'Alisterus scapularis',
+        'Australian King-Parrot',
+        1002,
+        1003,
+        1003,
+        'Small flocks. Strong rocking, undulating flight. Distinctive, dimorphic. Red and black bill. Bright yellow eye. Head, neck, underparts, brilliant flame-scarlet. Dark green mantle, wings. Light green inner wing-coverts ("shoulder" stripe). Dark blue hindneck, back, rump. Tail blackish-blue. Green-black crescents on red undertail coverts. Yellow spotted feathers on some birds are areas lacking melanin. **F* Greyish bill. Red-brown eye. Green head, neck; little or no "shoulder" stripe. Tail narrow pink tips.',
+        40,
+        45,
+        'cm',
+        'Brownish bill, chest, throat (Same for **Imm**). **1st yr** No blue on tips.',
+        'Loud "carrak-carak" in flight. Far-carrying, shrill piping whistle by male.',
+        'Moist, tall forest;nearby farmland. Orchards, parks, gardens, autumn/winter.',
+        '../static/images/birds/australian_king_parrot.jpg',
+        'Photogrpagh of a male Australian King-Parrot (full shot) on a small branch; left profile.',
+        '../static/images/birds/australian_king_parrot_2.jpg',
+        'Photogrpagh of a male Australian King-Parrot (full shot) on a stump; right profile.',
+        NULL,
+        NULL,
+        '../static/images/birds/maps/map-australian_king_parrot.png',
+        'Distribution map - Australian King-Parrot.', 
+        '../static/audio/Australian_King_Parrot.mp3'    
+    );
+
 -- *** QUERIES ***
 -- SELECT * FROM birdGenera;
 -- WHERE family_id=1002;
@@ -249,3 +325,5 @@ INSERT INTO birdSpecies(
 -- FROM birdGenera
 -- INNER JOIN birdFamilies ON birdGenera.family_id = birdFamilies.family_id
 -- WHERE birdFamilies.family_name_latin = 'Artamidae';
+
+
