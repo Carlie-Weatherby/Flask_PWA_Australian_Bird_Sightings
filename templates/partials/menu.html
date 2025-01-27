@@ -10,18 +10,18 @@
 
     <!-- Navigation Bar -->
     <nav class="topnav" id="myTopnav">
-        <a href="/index.html" class="active" aria-label="Home page">
+        <a href="{{ url_for('index') }}" class="active" aria-label="Home page">
             <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
         </a>
-        <a href="/search_sightings.html" aria-label="Search Sightings page">
+        <a href="{{ url_for('search_sightings') }}" aria-label="Search Sightings page">
             <span class="nav-text"> Search </span>
             <span class="nav-icon"><i class="fas fa-search"></i></span>
         </a>
-        <a href="/about.html" aria-label="About page"> 
+        <a href="{{ url_for('about') }}" aria-label="About page"> 
             <span class="nav-text"> About </span>
             <span class="nav-icon"><i class="fas fa-info-circle"></i></span>
         </a>
-        <a href="/donate.html" aria-label="Donate page">
+        <a href="{{ url_for('donate') }}" aria-label="Donate page">
             <span class="nav-text"> Donate </span>
             <span class="nav-icon"><i class="fas fa-hand-holding-usd"></i></span>
         </a>

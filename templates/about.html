@@ -1,100 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
-        <!-- Content Security Policy (CSP):
-        Allows Font Awesome to load securely. Includes:
-        - 'script-src': Permits scripts from 'self' and Font Awesome servers.
-        - 'style-src': Permits inline styles ('unsafe-inline') and Font Awesome styles.
-        Used cautiously to enable icons while minimizing risks. -->
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://kit.fontawesome.com; style-src 'self' https://kit.fontawesome.com 'unsafe-inline'; default-src 'self' https:;">
-        
-        <title>Carlie's Australian Bird Sightings</title>
+{% extends "layout.html" %}
 
-        <link rel="stylesheet" href="../static/css/style.css" />
-        <!-- Font Awesome Icons -->
-        <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
-        <!-- Google Fonts: Roboto and Montserrat-->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
-        <!-- <link rel="manifest" href="static/manifest.json" /> -->
-        <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.png"> -->
-    </head>
-    <body>
-        <header>
-            <!-- Banner -->
-            <div class="banner">
-                <img src="../static/images/CABS_logo_1080.png" alt="Logo" class="logo" />
-                <div class="banner-text">
-                    <h1>Australian Birds</h1>
-                    <h2>- Carlie's Sightings -</h2>
-                </div>
+{% block title %}
+About - Carlie's Australian Bird Sightings
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Page Heading -->
+    <section id="page-heading">
+        <div class="title-container">
+            <h1 class="page-heading">About Me</h1> <!-- New major heading -->
+        </div>
+    </section>
+
+    <!-- Subheading (Changes per Page) -->
+    <section id="page-subheading">
+        <div class="title-container">
+            <h2 class="minor-heading">--- Some information about me and this website ---</h2> <!-- Subheading changes for each page -->
+        </div>
+    </section>
+
+    <!-- Column layout - Photo and blurb -->
+    <section id="about">
+        <div class="about-container">
+            <!-- Left column: Photo -->
+            <div class="about-photo">
+                <img src="{{ url_for('static', filename='images/carlie_and_cy.jpg') }}" alt="Photo of Carlie and Cy">
             </div>
 
-            <!-- Navigation Bar -->
-            <nav class="topnav" id="myTopnav">
-                <a href="index.html" aria-label="Home page">
-                    <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
-                </a>
-                <a href="search_sightings.html" aria-label="Search Sightings page">
-                    <span class="nav-text"> Search </span>
-                    <span class="nav-icon"><i class="fas fa-search"></i></span>
-                </a>
-                <a href="about.html" class="active" aria-label="About page"> 
-                    <span class="nav-text"> About </span>
-                    <span class="nav-icon"><i class="fas fa-info-circle"></i></span>
-                </a>
-                <a href="donate.html" aria-label="Donate page">
-                    <span class="nav-text"> Donate </span>
-                    <span class="nav-icon"><i class="fas fa-hand-holding-usd"></i></span>
-                </a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Toggle navigation menu">
-                    <i class="fa-solid fa-bars"></i> <!-- Hamburger menu icon -->
-                </a>
-            </nav>
-        </header>
-        <main>
-            <!-- {% include "partials/menu.html" %} -->
-            <!-- {% block content %}{% endblock %} -->
-        <!-- Page Heading -->
-            <section id="page-heading">
-                <div class="title-container">
-                    <h1 class="page-heading">About Me</h1> <!-- New major heading -->
-                </div>
-            </section>
+            <!-- Right column: Text -->
+            <div class="about-text">
+                <h2>Hi, I'm Carlie! 👋 </h1>
+                <P></P>
+                <p>Hi, I’m Carlie! I love watching and listening to Australian birds and exploring the beautiful Australian landscapes. This website is my way of recording and sharing the bird species I encounter.</p>
+                <p>In the photo, you can see me pictured with my lovely dog, Cy. He also enjoys watching Australian birdlife.</p>
+            </div>
+        </div>
+    </section>
+</div>
 
-            <!-- Subheading (Changes per Page) -->
-            <section id="page-subheading">
-                <div class="title-container">
-                    <h2 class="minor-heading">--- Some information about me and this website ---</h2> <!-- Subheading changes for each page -->
-                </div>
-            </section>
-
-            <!-- Column layout - Photo and blurb -->
-            <section id="about">
-                <div class="about-container">
-                    <!-- Left column: Photo -->
-                    <div class="about-photo">
-                        <img src="../static/images/carlie_and_cy.jpg" alt="Photo of Carlie and her dog" class="profile-photo" />
-                    </div>
-
-                    <!-- Right column: Text -->
-                    <div class="about-text">
-                        <h2>Hi, I'm Carlie! 👋 </h1>
-                        <P></P>
-                        <p>Hi, I’m Carlie! I love watching and listening to Australian birds and exploring the beautiful Australian landscapes. This website is my way of recording and sharing the bird species I encounter.</p>
-                        <p>In the photo, you can see me pictured with my lovely dog, Cy. He also enjoys watching Australian birdlife.</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-
-        <!-- <script src="static/js/app.js"></script> -->
-        <!-- Should this move to below footer? - TBC -->
-        <footer>
-            <p>&copy; Copyright 2025 C. Weatherby.</p>
-        </footer>
-    </body>
-</html>
+{% endblock %}
