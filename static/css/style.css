@@ -246,6 +246,12 @@ section{
     padding: 20px;
     text-align: center;
     width: 250px; /* Set width for consistency */
+    position: relative; /* Enables positioning of child elements */
+    display: flex; /* Flexbox ensures content stacks neatly */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: flex-start; /* Keep content at the top initially */
+    align-items: center; /* Center-align all child elements */
+    padding-bottom: 60px; /* Extra space at the bottom for the button */
 }
 
 
@@ -253,16 +259,22 @@ section{
     width: 100%; /* Make image take up the full width of the box */
     height: auto;
     border-radius: 8px; /* Optional: rounds the image corners */
+    margin-bottom: 7px; /* Space below the image */
 }
 
 
 .bird-name {
     font-size: 1.2rem;
     margin: 10px 0;
+    word-wrap: break-word; /* Ensures long names do not overflow */
 }
 
 
 .profile-link {
+    position: absolute; /* Allows positioning relative to .bird-record */
+    bottom: 10px; /* Space from the bottom of the box */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust to truly center the button */
     display: inline-block;
     padding: 10px 20px;
     background-color: #04AA6D;
