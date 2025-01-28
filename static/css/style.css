@@ -187,11 +187,6 @@ section{
 }
 
 
-#about{
-    background-color: bisque;
-}
-
-
 /* Container for the title */
 .title-container {
     text-align: center;
@@ -382,6 +377,8 @@ section{
 #about {
     padding: 50px 20px;
     background-color: #f9f9f9;
+    /* background-color: bisque; */
+
 }
 
 

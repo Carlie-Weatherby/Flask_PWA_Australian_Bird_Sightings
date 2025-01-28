@@ -13,13 +13,17 @@ def index():
 def about():
     return render_template('about.html')
 
+# Route for the Search Sightings page
 @app.route('/search')
 def search_sightings():
     return render_template('search_sightings.html')
 
+# Route for the Donate page
 @app.route('/donate')
 def donate():
     return render_template('donate.html')
+
+
 
 if __name__ == '__main__':
     app.run(debug=True, host = '0.0.0.0', port=5000)

@@ -1,159 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />        
-        <!-- Content Security Policy (CSP):
-        Allows Font Awesome to load securely. Includes:
-        - 'script-src': Permits scripts from 'self' and Font Awesome servers.
-        - 'style-src': Permits inline styles ('unsafe-inline') and Font Awesome styles.
-        Used cautiously to enable icons while minimizing risks. -->
-        <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://kit.fontawesome.com; style-src 'self' https://kit.fontawesome.com 'unsafe-inline'; default-src 'self' https:;">
-        
-        <title>Carlie's Australian Bird Sightings</title>
+{% extends "layout.html" %}
 
-        <link rel="stylesheet" href="../static/css/style.css" />
-        <!-- Font Awesome Icons -->
-        <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
-        <!-- Google Fonts: Roboto and Montserrat-->
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
-        <!-- <link rel="manifest" href="static/manifest.json" /> -->
-        <!-- <link rel="icon" type="image/x-icon" href="static/images/favicon.png"> -->
-    </head>
-    <body>
-        <header>
-            <!-- Banner -->
-            <div class="banner">
-                <img src="../static/images/CABS_logo_1080.png" alt="Logo" class="logo" />
-                <div class="banner-text">
-                    <h1>Australian Birds</h1>
-                    <h2>- Carlie's Sightings -</h2>
-                </div>
+{% block title %}
+Search Sightings - Carlie's Australian Bird Sightings
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <!-- Page Heading -->
+    <section id="page-heading">
+        <div class="title-container">
+            <h1 class="page-heading">Australian Bird Sightings</h1> <!-- New major heading -->
+        </div>
+    </section>
+
+    <!-- Subheading (Changes per Page) -->
+    <section id="page-subheading">
+        <div class="title-container">
+            <h2 class="minor-heading">--- SEARCH MY SIGHTINGS 🔍 ---</h2> <!-- Subheading changes for each page -->
+        </div>
+    </section>
+
+    <!-- Search button with label -->
+    <section id="search-section">
+        <form id="search-form">
+            <!-- Label for Dropdown -->
+            <!--The value of for (in this case, search-type) must match the id of the associated form element. CFW-->
+            <!--for="search-type" - ensures the label works correctly.-->
+            <label for="search-type">Search type: </label>
+            
+            <!--The id uniquely identifies this specific dropdown element in the document. CFW-->
+            <!--It’s essential for connecting the <label> via the for attribute and for selecting the element in JavaScript or CSS. CFW-->
+            <!-- Dropdown -->
+            <!--id="search-type" - makes the dropdown identifiable for JavaScript and CSS.-->
+            <!--name="search-type" - ensures the backend knows what data is being submitted..-->
+            <select id="search-type" name="search-type">
+                <option value="">- None -</option>
+                <option value="all">All Sightings</option>
+                <option vaslue="common-name">By Species - Common name</option>
+                <option value="scientific-name">By Species - Scientific name</option>
+                <option value="family">By Family</option>
+                <option value="bird-type">By Bird Type</option>
+                <option value="abundance">By Bird Abundance</option>
+                <option value="movement">By Bird Movement</option>
+                <option value="date">By Date</option>
+            </select>
+        </form>
+    </section>
+
+    <!-- Placeholder for the chosen search type -->
+    <div id="chosen-search-type" class="chosen-type">
+        Chosen Search Type: <span id="search-result">None</span>
+    </div>
+
+    <!-- Grid of all bird species  - IN FUTURE GET FROM MY DATABASE -->
+    <section id="bird-sightings">
+        <div class="grid-container">
+            <!-- Each bird record -->
+            <div class="bird-record">
+                <img src="../static/images/birds/rainbow_lorikeet.jpg" alt="Rainbow Lorikeet" class="bird-image">
+                <h3 class="bird-name">Rainbow Lorikeet</h3>
+                <a href="bird1_profile.html" class="profile-link">Profile</a>
             </div>
-
-            <!-- Navigation Bar -->
-            <nav class="topnav" id="myTopnav">
-                <a href="index.html" aria-label="Home page">
-                    <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
-                </a>
-                <a href="search_sightings.html" aria-label="Search Sightings page">
-                    <span class="nav-text"> Search </span>
-                    <span class="nav-icon"><i class="fas fa-search"></i></span>
-                </a>
-                <a href="about.html" aria-label="About page"> 
-                    <span class="nav-text"> About </span>
-                    <span class="nav-icon"><i class="fas fa-info-circle"></i></span>
-                </a>
-                <a href="donate.html" aria-label="Donate page">
-                    <span class="nav-text"> Donate </span>
-                    <span class="nav-icon"><i class="fas fa-hand-holding-usd"></i></span>
-                </a>
-                <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Toggle navigation menu">
-                    <i class="fa-solid fa-bars"></i> <!-- Hamburger menu icon -->
-                </a>
-            </nav>
-        </header>
-        <main>
-            <!-- {% include "partials/menu.html" %} -->
-            <!-- {% block content %}{% endblock %} -->
-        <!-- Page Heading -->
-            <section id="page-heading">
-                <div class="title-container">
-                    <h1 class="page-heading">Australian Bird Sightings</h1> <!-- New major heading -->
-                </div>
-            </section>
-
-            <!-- Subheading (Changes per Page) -->
-            <section id="page-subheading">
-                <div class="title-container">
-                    <h2 class="minor-heading">--- SEARCH MY SIGHTINGS 🔍 ---</h2> <!-- Subheading changes for each page -->
-                </div>
-            </section>
-
-            <!-- Search button with label -->
-            <section id="search-section">
-                <form id="search-form">
-                    <!-- Label for Dropdown -->
-                    <!--The value of for (in this case, search-type) must match the id of the associated form element. CFW-->
-                    <!--for="search-type" - ensures the label works correctly.-->
-                    <label for="search-type">Search type: </label>
-                    
-                    <!--The id uniquely identifies this specific dropdown element in the document. CFW-->
-                    <!--It’s essential for connecting the <label> via the for attribute and for selecting the element in JavaScript or CSS. CFW-->
-                    <!-- Dropdown -->
-                    <!--id="search-type" - makes the dropdown identifiable for JavaScript and CSS.-->
-                    <!--name="search-type" - ensures the backend knows what data is being submitted..-->
-                    <select id="search-type" name="search-type">
-                        <option value="">- None -</option>
-                        <option value="all">All Sightings</option>
-                        <option value="common-name">By Species - Common name</option>
-                        <option value="scientific-name">By Species - Scientific name</option>
-                        <option value="family">By Family</option>
-                        <option value="bird-type">By Bird Type</option>
-                        <option value="abundance">By Bird Abundance</option>
-                        <option value="movement">By Bird Movement</option>
-                        <option value="date">By Date</option>
-                    </select>
-                </form>
-            </section>
-
-            <!-- Placeholder for the chosen search type -->
-            <div id="chosen-search-type" class="chosen-type">
-                Chosen Search Type: <span id="search-result">None</span>
+            <div class="bird-record">
+                <img src="../static/images/birds/australian_king_parrot.jpg" alt="Australian King-Parrot" class="bird-image">
+                <h3 class="bird-name">Australian King-Parrot</h3>
+                <a href="bird2_profile.html" class="profile-link">Profile</a>
             </div>
-
-            <!-- Grid of all bird species  - IN FUTURE GET FROM MY DATABASE -->
-            <section id="bird-sightings">
-                <div class="grid-container">
-                    <!-- Each bird record -->
-                    <div class="bird-record">
-                        <img src="../static/images/birds/rainbow_lorikeet.jpg" alt="Rainbow Lorikeet" class="bird-image">
-                        <h3 class="bird-name">Rainbow Lorikeet</h3>
-                        <a href="bird1_profile.html" class="profile-link">Profile</a>
-                    </div>
-                    <div class="bird-record">
-                        <img src="../static/images/birds/australian_king_parrot.jpg" alt="Australian King-Parrot" class="bird-image">
-                        <h3 class="bird-name">Australian King-Parrot</h3>
-                        <a href="bird2_profile.html" class="profile-link">Profile</a>
-                    </div>
-                    <div class="bird-record">
-                        <img src="../static/images/birds/grey_butcherbird.jpg" alt="Grey Butcherbird" class="bird-image">
-                        <h3 class="bird-name">Grey Butcherbird</h3>
-                        <a href="bird3_profile.html" class="profile-link">Profile</a>
-                    </div>
-                        <div class="bird-record">
-                        <img src="../static/images/birds/pied_currawong.jpg" alt="Pied Currawong" class="bird-image">
-                        <h3 class="bird-name">Pied Currawong</h3>
-                        <a href="bird4_profile.html" class="profile-link">Profile</a>
-                    </div>
-                    <!-- Add more records as needed -->
-                </div>
-            </section>
-
-            <section id="about">
-                <div class="container">
-                    <h1>About Me</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, similique?</p>
-                    <ul>
-                        <li>Btech Qualified</li>
-                        <li>Software Engineer</li>
-                        <li>GATE AIR 01</li>
-                    </ul>
-                </div>
-            </section>
-
-        </main>
-        <!-- <script src="static/js/app.js"></script> -->
-        <!-- Should this move to below footer? - TBC -->
-        <footer>
-            <p>&copy; Copyright 2025 C. Weatherby.</p>
-        </footer>
-        
-        
-        <script src="../static/js/search.js"></script>
-
-        <script src="{{ url_for('static', filename='js/search.js') }}"></script>
-
-    </body>
-</html>
+            <div class="bird-record">
+                <img src="../static/images/birds/grey_butcherbird.jpg" alt="Grey Butcherbird" class="bird-image">
+                <h3 class="bird-name">Grey Butcherbird</h3>
+                <a href="bird3_profile.html" class="profile-link">Profile</a>
+            </div>
+                <div class="bird-record">
+                <img src="../static/images/birds/pied_currawong.jpg" alt="Pied Currawong" class="bird-image">
+                <h3 class="bird-name">Pied Currawong</h3>
+                <a href="bird4_profile.html" class="profile-link">Profile</a>
+            </div>
+            <!-- Add more records as needed -->
+        </div>
+    </section>
+</div>
+{% endblock %}
