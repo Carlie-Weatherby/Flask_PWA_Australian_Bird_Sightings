@@ -6,7 +6,9 @@ app = Flask(__name__)
 # Route for the homepage
 @app.route('/')
 def index():
-    return render_template('index.html')
+    species_data = dbHandler.listSpecies()
+    # return render_template('index.html')
+    return render_template('index.html', content=species_data)
 
 # Route for the About page
 @app.route('/about')
