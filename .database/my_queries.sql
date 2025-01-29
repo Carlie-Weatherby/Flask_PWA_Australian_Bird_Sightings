@@ -34,6 +34,7 @@
 -- UPDATE birdSpecies SET genus_id = 1008 WHERE species_id = 3005;
 -- UPDATE birdSpecies SET image_bird2_desc = 'Midshot view of an adult Laughing Kookaburra, left profile view.' 
 -- WHERE species_id = 3001;
+-- DROP TABLE sightings;
 
 
 
@@ -344,6 +345,207 @@
 --     );
 
 
+-- CREATE TABLE sightings (
+--     sighting_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     species_id INTEGER NOT NULL, -- foreign key
+--     date_sighted TEXT NOT NULL, -- Stores date in 'YYYY-MM-DD' format
+--     location_suburb TEXT NOT NULL,
+--     location_state TEXT NOT NULL,
+--     location_desc TEXT,
+--     location_coord_lat FLOAT, -- Stores latitude in -NN.NNNNNNNN format
+--     location_coord_long FLOAT, -- Stores longitude in NNN.NNNNNNNN format
+--     notes TEXT,
+--     cfw_photo_path TEXT,
+--     cfw_photo_desc TEXT,
+--     FOREIGN KEY (species_id) REFERENCES birdSpecies(species_id)
+--     );
+
+-- INSERT INTO sightings(
+--     species_id,
+--     date_sighted,
+--     location_suburb,
+--     location_state,
+--     location_desc,
+--     location_coord_lat,
+--     location_coord_long,
+--     notes,
+--     cfw_photo_path,
+--     cfw_photo_desc
+-- ) 
+-- VALUES (
+--     3005,
+--     '2024-12-24',
+--     'Illawong',
+--     'NSW',
+--     'Sitting in a tree.',
+--     -33.99883889, 
+--     151.07013056,
+--     'Sighted at home.',
+--     NULL,
+--     NULL
+-- );
+
+
+INSERT INTO sightings(
+    species_id,
+    date_sighted,
+    location_suburb,
+    location_state,
+    location_desc,
+    location_coord_lat,
+    location_coord_long,
+    notes,
+    cfw_photo_path,
+    cfw_photo_desc
+) 
+VALUES 
+    (
+        3001,
+        '2025-01-18',
+        'Illawong',
+        'NSW',
+        'Pair, sitting in a tree. Calling (laughing).',
+        -33.99892500, 
+        151.07021944,
+        'Calling for Cy. 💕 18/1/2025. Sighted at home.',
+        NULL,
+        NULL
+    ),
+    (
+        3003,
+        '2024-12-25',
+        'Illawong',
+        'NSW',
+        'Sitting on the clothes line.',
+        -33.99870833, 
+        151.07039444,
+        'Christmas day - Family dinner, (day light savings). Sighted at home.',
+        NULL,
+        NULL
+    ),
+    (
+        3002,
+        '2025-01-27',
+        'Illawong',
+        'NSW',
+        'Sitting in a tree, feeding on flowers. Calling.',
+        -33.99883889, 
+        151.07013056,
+        'Part of a small flock (4-5) in the same tree. Sighted at home.',
+        NULL,
+        NULL
+    ),
+    (
+        3005,
+        '2024-12-22',
+        'Illawong',
+        'NSW',
+        'Sitting in a tree.',
+        -33.99883889, 
+        151.07013056,
+        'Sighted at home.',
+        NULL,
+        NULL
+    ),
+    (
+        3004,
+        '2024-12-24',
+        'Illawong',
+        'NSW',
+        'In flight.',
+        -33.99903611, 
+        151.07011667,
+        'Sighted at home.',
+        NULL,
+        NULL
+    ),
+    (
+        3006,
+        '2025-01-29',
+        'Illawong',
+        'NSW',
+        'Sitting on a brick wall.',
+        -33.99868056, 
+        151.07020278,
+        '90% sure this was a Grey Currawong. Browner, less white. Sighted at home.',
+        NULL,
+        NULL
+    ),
+    (
+        3001,
+        '2024-12-24',
+        'Illawong',
+        'NSW',
+        'Sitting on the clothes line. Hunting.',
+        -33.99874722, 
+        151.07034722,
+        'Taking advantage of newly mowed lawn (hunting ground). Sighted at home.',
+        NULL,
+        NULL
+    ),
+    (
+        3004,
+        '2025-01-29',
+        'Illawong',
+        'NSW',
+        'Sitting on a brick wall.',
+        -33.99868889, 
+        151.07039444,
+        'Sighted at home.',
+        NULL,
+        NULL
+    ),
+    (
+        3002,
+        '2024-01-27',
+        'Illawong',
+        'NSW',
+        'Exiting from a hole in a tree (Angophora).',
+        -33.99883889, 
+        151.07013056,
+        'Sighted two birds exiting hole. They both stood at entrance prior to taking flight. Possible nest in tree hole. Sighted at home.',
+        NULL,
+        NULL
+    ),
+    (
+        3004,
+        '2025-01-29',
+        'Illawong',
+        'NSW',
+        'Sitting in a tree.',
+        -34.00754444, 
+        151.04940556,
+        'Sighted near Illawong Village shops.',
+        NULL,
+        NULL
+    ),
+    (
+        3001,
+        '2025-01-26',
+        'Illawong',
+        'NSW',
+        'Sitting in a tree.',
+        -34.00396389, 
+        151.05332500,
+        'Sighted near "Letterbox Lane".',
+        NULL,
+        NULL
+    ),
+    (
+        3001,
+        '2024-12-16',
+        'Illawong',
+        'NSW',
+        'Sitting on a wire.',
+        -34.00396389, 
+        151.05332500,
+        'Sighted near Bignell Street bus stop.',
+        NULL,
+        NULL
+    );
+
+
+
 
 
 -- *** QUERIES ***
@@ -388,3 +590,7 @@
 --     birdSpecies.genus_id = birdGenera.genus_id
 -- WHERE 
 --     birdGenera.genus_name = 'Strepera';
+
+
+
+
