@@ -23,7 +23,7 @@ Search Sightings - Carlie's Australian Bird Sightings
 
     <!-- Search button with label -->
     <section id="search-section">
-        <form id="search-form">
+        <form id="search-form" method="GET" action="/search">
             <!-- Label for Dropdown -->
             <!--The value of for (in this case, search-type) must match the id of the associated form element. CFW-->
             <!--for="search-type" - ensures the label works correctly.-->
@@ -34,10 +34,10 @@ Search Sightings - Carlie's Australian Bird Sightings
             <!-- Dropdown -->
             <!--id="search-type" - makes the dropdown identifiable for JavaScript and CSS.-->
             <!--name="search-type" - ensures the backend knows what data is being submitted..-->
-            <select id="search-type" name="search-type">
-                <option value="">- None -</option>
+            <select id="search-type" name="search_type" required>
+                <option value="" disabled selected>- None -</option> <!-- Default option; can't be selected by user -->
                 <option value="all">All Sightings</option>
-                <option vaslue="common-name">By Species - Common name</option>
+                <option value="common-name">By Species - Common name</option>
                 <option value="scientific-name">By Species - Scientific name</option>
                 <option value="family">By Family</option>
                 <option value="bird-type">By Bird Type</option>
@@ -45,6 +45,7 @@ Search Sightings - Carlie's Australian Bird Sightings
                 <option value="movement">By Bird Movement</option>
                 <option value="date">By Date</option>
             </select>
+            <button type="submit">Search</button> <!-- Submits the form to the server, triggering the search request -->
         </form>
         <!-- Placeholder for the chosen search type -->
         <div id="chosen-search-type" class="chosen-type">
@@ -55,19 +56,30 @@ Search Sightings - Carlie's Australian Bird Sightings
     <!-- Grid of all bird species  - IN FUTURE GET FROM MY DATABASE -->
     <section id="bird-sightings">
         <div class="grid-container">
-        {% for row in content %}
-            <div class="bird-record">
-                <img
-                    class="bird-image"
-                    src="{{ row['image_bird1_path'] }}"
-                    alt="{{ row['image_bird1_desc'] }}"
-                />
-                    <h3 class="bird-name">{{ row['common_name'] }}</h3>
-                    <a class="profile-link" href="bird_profile.html">Profile</a
-                >
+        {% if content %}
+            {% for row in content %}
+                <div class="bird-record">
+                    <img
+                        class="bird-image"
+                        src="{{ row['image_bird1_path'] }}"
+                        alt="{{ row['image_bird1_desc'] }}"
+                    />
+                        <h3 class="bird-name">{{ row['common_name'] }}</h3>
+                        <a class="profile-link" href="bird_profile.html">Profile</a
+                    >
+                </div>
+            {% endfor %}
+        {% else %}
+            <div class="no-sightings-container">
+                <div class="no-sightings-message">
+                    <p>🦉 No sightings to display. Please select an option from the dropdown list, then click 'Search' to view data.</p>
+                </div>
             </div>
-        {% endfor %}
+        {% endif %}
+            
         </div>
     </section>
+
+    
 </div>
 {% endblock %}

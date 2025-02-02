@@ -16,11 +16,13 @@ def about():
     return render_template('about.html')
 
 # Route for the Search Sightings page
-@app.route('/search')
+@app.route('/search', methods=['GET'])
 def search_sightings():
-    
-    species_data = dbHandler.listSpecies()
-    # return render_template('search_sightings.html')
+    search_type = request.args.get('search_type') # Get the selected search type
+    if search_type == 'all':
+        species_data = dbHandler.listSpecies()
+    else:
+        species_data = [] # Clear data if "None" is selected or no valid option is chosen
     return render_template('search_sightings.html', content=species_data)
 
 # Route for the Donate page

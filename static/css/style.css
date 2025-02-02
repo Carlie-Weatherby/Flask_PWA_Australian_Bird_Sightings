@@ -385,6 +385,70 @@ section{
 }
 
 
+/* Make the message container span all grid columns */
+.no-sightings-container {
+    grid-column: 1 / -1;       /* Span from the first column to the last */
+    display: flex;             /* Use flexbox to center content */
+    justify-content: center;   /* Center horizontally */
+    align-items: center;       /* Center vertically */
+    padding: 20px;             /* Add padding */
+}
+
+/* Style for the message box */
+.no-sightings-message {
+    background-color: #f0f8ff;
+    border: 2px solid #007acc;
+    padding: 20px 40px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+}
+
+button[type="submit"] {
+    background: linear-gradient(135deg, #007acc, #3399ff); /* Gradient effect */
+    color: white;                  /* White text for contrast */
+    padding: 12px 24px;            /* Comfortable padding */
+    border: none;                  /* Remove default border */
+    border-radius: 8px;            /* Smooth rounded corners */
+    font-size: 1rem;               /* Consistent font size */
+    cursor: pointer;               /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+
+button[type="submit"]:hover {
+    background-color: #005fa3;     /* Darker shade on hover */
+    transform: translateY(-2px);   /* Slight lift effect */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhance shadow */
+}
+
+
+button[type="submit"]:active {
+    background-color: #004e8a;     /* Even darker when clicked */
+    transform: translateY(0);      /* Return to original position */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow */
+}
+
+
+button[type="submit"]:focus {
+    outline: 3px solid #80d0ff;    /* Bright outline for accessibility */
+    outline-offset: 2px;           /* Space between outline and button */
+}
+
+
+@media (max-width: 600px) {
+    button[type="submit"] {
+        width: 100%;               /* Full-width button on small screens */
+        padding: 14px;             /* Adjust padding */
+        font-size: 1.1rem;         /* Slightly larger text */
+    }
+}
+
 /* About Page Styling */
 #about {
     padding: 50px 20px;
