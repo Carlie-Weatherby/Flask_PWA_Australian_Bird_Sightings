@@ -19,8 +19,16 @@ def about():
 @app.route('/search', methods=['GET'])
 def search_sightings():
     search_type = request.args.get('search_type') # Get the selected search type
+    common_name = request.args.get('common_name') # Get the selected search type
+    scientific_name = request.args.get('scientific_name') # Get the selected search type
+    
+    
     if search_type == 'all':
         species_data = dbHandler.listSpecies()
+    elif search_type =='common-name' and common_name:
+        species_data = dbHandler.searchByCommonName(common_name)
+    elif search_type =='scientific-name' and scientific_name:
+        species_data = dbHandler.searchByScientificName(scientific_name)
     else:
         species_data = [] # Clear data if "None" is selected or no valid option is chosen
     return render_template('search_sightings.html', content=species_data)

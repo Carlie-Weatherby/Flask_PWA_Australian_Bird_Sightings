@@ -312,8 +312,10 @@ section{
 
 #search-form {
     display: flex;
-    align-items: center;
-    gap: 10px; /* Space between label and dropdown */
+    flex-direction: column; /* Stacks items vertically */
+    gap: 10px; /* Add a space between form elements */
+    max-width: 400px; /* Optional: limit the form width */
+    margin: 0 auto; /* Center the form horizontally */
 }
 
 /* Label Styling */
@@ -361,6 +363,32 @@ section{
     #search-form label,
     #search-form select {
         width: 100%; /* Full width on small screens */
+    }
+}
+
+
+/* Shared styles for all search-related text boxes */
+.search-input {
+    width: 100%;                   /* Full width */
+    padding: 10px;                 /* Comfortable padding */
+    border: 1px solid #ccc;        /* Light gray border */
+    border-radius: 5px;            /* Rounded corners */
+    font-size: 1rem;               /* Standard font size */
+    box-sizing: border-box;        /* Ensure padding doesn't affect width */
+    transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+/* Focus effect for better accessibility */
+.search-input:focus {
+    border-color: #007acc;         /* Highlight border when focused */
+    box-shadow: 0 0 5px rgba(0, 122, 204, 0.5); /* Subtle glow effect */
+    outline: none;                 /* Remove default outline */
+}
+
+@media (max-width: 600px) {
+    .search-input {
+        font-size: 0.9rem;         /* Slightly smaller font on small screens */
+        padding: 8px;              /* Reduce padding */
     }
 }
 
@@ -448,6 +476,20 @@ button[type="submit"]:focus {
         font-size: 1.1rem;         /* Slightly larger text */
     }
 }
+
+#common-name-container {
+    display: none;           /* Hide by default */
+    margin-top: 5px;         /* Add a small space from the dropdown */
+}
+
+#common-name-input {
+    width: 100%;             /* Make the text box full width */
+    padding: 8px;            /* Add padding inside the text box */
+    border: 1px solid #ccc;  /* Light border for the input */
+    border-radius: 4px;      /* Rounded corners */
+    font-size: 1rem;         /* Consistent font size */
+}
+
 
 /* About Page Styling */
 #about {

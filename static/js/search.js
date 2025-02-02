@@ -10,6 +10,10 @@
     // 1. Variable Declarations
     const searchTypeDropdown = document.getElementById("search-type"); // Dropdown element
     const searchResult = document.getElementById("search-result"); // Output element
+    const commonNameContainer = document.getElementById("common-name-container"); // Container for the text input
+    const commonNameInput = document.getElementById("common-name-input"); // Text input for common name
+    const scientificNameContainer = document.getElementById("scientific-name-container"); // Container for the text input
+    const scientificNameInput = document.getElementById("scientific-name-input"); // Text input for scientific name       
     const STORAGE_KEY = "chosenSearchType"; // Key for storing the selection in localStorage
 
     // 2. Utility Functions
@@ -34,11 +38,14 @@
      * Loads the saved search type from localStorage and updates the dropdown and display.
      */
     function loadSearchType() {
-        const savedValue = localStorage.getItem(STORAGE_KEY); // Retrieve the saved value
+        /*const savedValue = localStorage.getItem(STORAGE_KEY); // Retrieve the saved value*/
+        const savedValue = localStorage.getItem("chosenSearchType"); // Retrieve the saved value
+
         if (savedValue) {
             searchTypeDropdown.value = savedValue; // Set the dropdown to the saved value
-            const selectedText = searchTypeDropdown.options[searchTypeDropdown.selectedIndex].text;
-            updateSearchResult(selectedText); // Update the display
+
+            handleDropdownChange({ target: searchTypeDropdown });  // Ensure correct field visibility on load
+
         }
     }
 
@@ -55,6 +62,23 @@
 
         updateSearchResult(selectedText); // Update the displayed search type
         saveSearchType(selectedValue); // Save the selected value
+
+        // Show/Hide Common Name Input
+        if (selectedValue === "common-name") {
+            commonNameContainer.style.display = "block"; // Show the text input
+            scientificNameContainer.style.display = "none"; // Hide scientific name input
+            scientificNameInput.value = "";  // Clear scientific name input
+        } else if (selectedValue === 'scientific-name') {
+            scientificNameContainer.style.display = "block"; // Hide scientific name input
+            commonNameContainer.style.display = "none";  // Hide the text input for other options
+            commonNameInput.value = ""; // Clear the input field when hidden
+        } else {
+            // Hide both inputs if "All Sightings" or "None" is selected
+            commonNameContainer.style.display = "none";
+            scientificNameContainer.style.display = "none";
+            commonNameInput.value = "";       // Clear common name input
+            scientificNameInput.value = "";   // Clear scientific name input
+        }
     }
 
     // 4. Initialize the Page

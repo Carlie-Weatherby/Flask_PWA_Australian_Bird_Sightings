@@ -45,6 +45,19 @@ Search Sightings - Carlie's Australian Bird Sightings
                 <option value="movement">By Bird Movement</option>
                 <option value="date">By Date</option>
             </select>
+            
+            <!-- Text input for common name (hidden by default) -->
+            <div id="common-name-container" style="display: none;">
+                <label for="common-name-input">Enter common name, or part of it:- </label>
+                <input type="text" id="common-name-input" name="common_name" class="search-input" placeholder="e.g., grey">
+            </div>
+
+            <!-- Text input for ocscientific mmon name (hidden by default) -->
+            <div id="scientific-name-container" style="display: none;">
+                <label for="scientific-name-input">Enter scientific name, or part of it:- </label>
+                <input type="text" id="scientific-name-input" name="scientific_name" class="search-input" placeholder="e.g., strepera ...">
+            </div>
+
             <button type="submit">Search</button> <!-- Submits the form to the server, triggering the search request -->
         </form>
         <!-- Placeholder for the chosen search type -->
