@@ -1,3 +1,20 @@
+-- *** COMMANDS I'VE PLAYED WITH (NOT IN ORDER) ***
+-- DROP TABLE birdFamily;
+-- ALTER TABLE birdFamily RENAME COLUMN family_name TO family_name_english;
+-- ALTER TABLE birdFamily RENAME COLUMN common_family_name TO family_name_latin;
+-- ALTER TABLE birdFamily RENAME TO birdFamilies;
+-- UPDATE birdFamilies SET family_name_latin = 'Artamidae' WHERE family_id = 1003;
+-- ALTER TABLE birdSpecies RENAME COLUMN jouvenile TO juvenile;
+-- DROP TABLE birdSpecies;
+-- DELETE FROM birdGenera WHERE genus_id = 1009;
+-- UPDATE birdSpecies SET genus_id = 1008 WHERE species_id = 3005;
+-- UPDATE birdSpecies SET image_bird2_desc = 'Midshot view of an adult Laughing Kookaburra, left profile view.' 
+-- WHERE species_id = 3001;
+-- DROP TABLE sightings;
+
+
+ -- *******************************************************
+
 --  CREATE TABLE birdFamilies (
 --     family_id INTEGER PRIMARY KEY AUTOINCREMENT,
 --     family_name_english TEXT NOT NULL,
@@ -19,23 +36,6 @@
 --     ('Pelicans', 'Pelecanidae', 'Ibises, spoonbills, herons, Hamerkop, Shoebill, pelicans'),
 --     ('Gulls, Terns, Skimmers', 'Laridae', 'Noddies, skimmers, gulls, terns, skuas, auks')
 --     ('Old World Parrots', 'Psittaculidae', 'Parrots, cockatoos');
-
-
-
--- *** COMMANDS I'VE PLAYED WITH (NOT IN OPRDER) ***
--- DROP TABLE birdFamily;
--- ALTER TABLE birdFamily RENAME COLUMN family_name TO family_name_english;
--- ALTER TABLE birdFamily RENAME COLUMN common_family_name TO family_name_latin;
--- ALTER TABLE birdFamily RENAME TO birdFamilies;
--- UPDATE birdFamilies SET family_name_latin = 'Artamidae' WHERE family_id = 1003;
--- ALTER TABLE birdSpecies RENAME COLUMN jouvenile TO juvenile;
--- DROP TABLE birdSpecies;
--- DELETE FROM birdGenera WHERE genus_id = 1009;
--- UPDATE birdSpecies SET genus_id = 1008 WHERE species_id = 3005;
--- UPDATE birdSpecies SET image_bird2_desc = 'Midshot view of an adult Laughing Kookaburra, left profile view.' 
--- WHERE species_id = 3001;
--- DROP TABLE sightings;
-
 
 
 -- CREATE TABLE birdGenera (
@@ -62,7 +62,8 @@
 --     (1004, 'Pelecanus', 'Pelicans'),
 --     (1002, 'Zanda', 'Australian Cockatoos'),
 --     (1001, 'Dacelo', 'Kookaburras'),
---     (1006, 'Alisterus', 'King Parrots');
+--     (1006, 'Alisterus', 'King Parrots'),
+--     (1002, 'Cacatua', 'White Cockatoos and Corellas');
 
 
 --  CREATE TABLE birdType (
@@ -172,57 +173,31 @@
 --     image_map1_path,
 --     image_map1_desc,
 --     audio_call1_path
--- ) VALUES (
---     1007,
---     'Dacelo novaeguineae',
---     'Laughing Kookaburra',
---     1002,
---     1003,
---     1004,
---     'Largest kookaburra. Families 4-8 birds. White wing-patches in heavy direct flight. Tail up on alighting, slowly lowered. Massive bill, black above, horn below. Dark eye-stripe. Large, pale head; brown spots, crown patch. Back, wings, brown; wings mottled pale blue. Often blue rump. Tail barred ruffous-brown and black; edged white. Plain white below. **M br.** Centre rump bright blue. Race minor (B) Smaller. **F** Brown or pale blue rump; head more buff', 
---     40,
---     48,
---     'cm',
---     'More barred, washed warm-brown. All black bill. **Imm** As female.',
---     'Raucous "koo-koo-ka-ka-kook" chorus; warning "kooaa".',
---     'Open forest, woodland.',
---     '../static/images/birds/laughing_kookaburra_by_Shane_Little.jpg',
---     'Male and female Laughing Kookaburra sitting on a tree together. Photograph by Shane Little.',
---     '../static/images/birds/laughing_kookaburra_2.jpg',
---     'Midshot view of an adult Laughing Kookaburra, left profile view.',
---     NULL,
---     NULL,
---     '../static/images/birds/maps/map-laughing_kookaburra.png',
---     'Distribution map - Laughing kookaburra.', 
---     '../static/audio/Laughing_Kookaburra.mp3'
--- );
-
-
--- INSERT INTO birdSpecies(
---     genus_id,
---     scientific_name,
---     common_name,
---     type_id,
---     abundance_id,
---     movement_id,
---     description,
---     size_avg_min,
---     size_avg_max,
---     size_unit,
---     juvenile,
---     voice,
---     habitat,
---     image_bird1_path,
---     image_bird1_desc,
---     image_bird2_path,
---     image_bird2_desc,
---     image_bird3_path,
---     image_bird3_desc,
---     image_map1_path,
---     image_map1_desc,
---     audio_call1_path
--- ) 
--- VALUES 
+-- ) VALUES 
+--     (
+--         1007,
+--         'Dacelo novaeguineae',
+--         'Laughing Kookaburra',
+--         1002,
+--         1003,
+--         1004,
+--         'Largest kookaburra. Families 4-8 birds. White wing-patches in heavy direct flight. Tail up on alighting, slowly lowered. Massive bill, black above, horn below. Dark eye-stripe. Large, pale head; brown spots, crown patch. Back, wings, brown; wings mottled pale blue. Often blue rump. Tail barred ruffous-brown and black; edged white. Plain white below. **M br.** Centre rump bright blue. Race minor (B) Smaller. **F** Brown or pale blue rump; head more buff', 
+--         40,
+--         48,
+--         'cm',
+--         'More barred, washed warm-brown. All black bill. **Imm** As female.',
+--         'Raucous "koo-koo-ka-ka-kook" chorus; warning "kooaa".',
+--         'Open forest, woodland.',
+--         '../static/images/birds/laughing_kookaburra_by_Shane_Little.jpg',
+--         'Male and female Laughing Kookaburra sitting on a tree together. Photograph by Shane Little.',
+--         '../static/images/birds/laughing_kookaburra_2.jpg',
+--         'Midshot view of an adult Laughing Kookaburra, left profile view.',
+--         NULL,
+--         NULL,
+--         '../static/images/birds/maps/map-laughing_kookaburra.png',
+--         'Distribution map - Laughing kookaburra.', 
+--         '../static/audio/Laughing_Kookaburra.mp3'
+--     ),
 --     (
 --         1002,
 --         'Trichoglossus moluccanus',
@@ -342,7 +317,33 @@
 --         '../static/images/birds/maps/map-grey_currawong.png',
 --         'Distribution map - Grey Currawong.', 
 --         '../static/audio/Grey_Currawong.mp3'   
---     );
+--     ),
+    (
+        1010,
+        'Cacatua galerita',
+        'Sulphur-crested Cockatoo',
+        NULL,
+        1003,
+        1004,
+        'Flocks feed on ground. White; distinctive in flight; uneven wing-beat (flap-flap-glide) on stiff, broad, rounded wings. Erectile, forward-curving sulphur crest. Underwing, washed yellow.', 
+        48,
+        55,
+        'cm',
+        NULL,
+        'Extremely raucous screech; single squark in flight.',
+        'Many, varied vegetation types.',
+        '../static/images/birds/sulfur_crested_cockatoo_by_Wendy_Smith.jpg',
+        'Photo of a Sulphur-crested Cockatoo landing on a branch, wings outstretched. Photograph by Wendy Smith.',
+        NULL,
+        NULL,
+        NULL,
+        NULL,
+        '../static/images/birds/maps/map-sulphur_crested_cockatoo.png',
+        'Distribution map - Laughing kookaburra.', 
+        '../static/audio/Sulphur_Crested_Cockatoo.mp3'
+    );
+
+
 
 
 -- CREATE TABLE sightings (
@@ -386,164 +387,223 @@
 -- );
 
 
-INSERT INTO sightings(
-    species_id,
-    date_sighted,
-    location_suburb,
-    location_state,
-    location_desc,
-    location_coord_lat,
-    location_coord_long,
-    notes,
-    cfw_photo_path,
-    cfw_photo_desc
-) 
-VALUES 
-    (
-        3001,
-        '2025-01-18',
-        'Illawong',
-        'NSW',
-        'Pair, sitting in a tree. Calling (laughing).',
-        -33.99892500, 
-        151.07021944,
-        'Calling for Cy. 💕 18/1/2025. Sighted at home.',
-        NULL,
-        NULL
-    ),
-    (
-        3003,
-        '2024-12-25',
-        'Illawong',
-        'NSW',
-        'Sitting on the clothes line.',
-        -33.99870833, 
-        151.07039444,
-        'Christmas day - Family dinner, (day light savings). Sighted at home.',
-        NULL,
-        NULL
-    ),
-    (
-        3002,
-        '2025-01-27',
-        'Illawong',
-        'NSW',
-        'Sitting in a tree, feeding on flowers. Calling.',
-        -33.99883889, 
-        151.07013056,
-        'Part of a small flock (4-5) in the same tree. Sighted at home.',
-        NULL,
-        NULL
-    ),
-    (
-        3005,
-        '2024-12-22',
-        'Illawong',
-        'NSW',
-        'Sitting in a tree.',
-        -33.99883889, 
-        151.07013056,
-        'Sighted at home.',
-        NULL,
-        NULL
-    ),
-    (
-        3004,
-        '2024-12-24',
-        'Illawong',
-        'NSW',
-        'In flight.',
-        -33.99903611, 
-        151.07011667,
-        'Sighted at home.',
-        NULL,
-        NULL
-    ),
-    (
-        3006,
-        '2025-01-29',
-        'Illawong',
-        'NSW',
-        'Sitting on a brick wall.',
-        -33.99868056, 
-        151.07020278,
-        '90% sure this was a Grey Currawong. Browner, less white. Sighted at home.',
-        NULL,
-        NULL
-    ),
-    (
-        3001,
-        '2024-12-24',
-        'Illawong',
-        'NSW',
-        'Sitting on the clothes line. Hunting.',
-        -33.99874722, 
-        151.07034722,
-        'Taking advantage of newly mowed lawn (hunting ground). Sighted at home.',
-        NULL,
-        NULL
-    ),
-    (
-        3004,
-        '2025-01-29',
-        'Illawong',
-        'NSW',
-        'Sitting on a brick wall.',
-        -33.99868889, 
-        151.07039444,
-        'Sighted at home.',
-        NULL,
-        NULL
-    ),
-    (
-        3002,
-        '2024-01-27',
-        'Illawong',
-        'NSW',
-        'Exiting from a hole in a tree (Angophora).',
-        -33.99883889, 
-        151.07013056,
-        'Sighted two birds exiting hole. They both stood at entrance prior to taking flight. Possible nest in tree hole. Sighted at home.',
-        NULL,
-        NULL
-    ),
-    (
-        3004,
-        '2025-01-29',
-        'Illawong',
-        'NSW',
-        'Sitting in a tree.',
-        -34.00754444, 
-        151.04940556,
-        'Sighted near Illawong Village shops.',
-        NULL,
-        NULL
-    ),
-    (
-        3001,
-        '2025-01-26',
-        'Illawong',
-        'NSW',
-        'Sitting in a tree.',
-        -34.00396389, 
-        151.05332500,
-        'Sighted near "Letterbox Lane".',
-        NULL,
-        NULL
-    ),
-    (
-        3001,
-        '2024-12-16',
-        'Illawong',
-        'NSW',
-        'Sitting on a wire.',
-        -34.00396389, 
-        151.05332500,
-        'Sighted near Bignell Street bus stop.',
-        NULL,
-        NULL
-    );
-
+-- INSERT INTO sightings(
+--     species_id,
+--     date_sighted,
+--     location_suburb,
+--     location_state,
+--     location_desc,
+--     location_coord_lat,
+--     location_coord_long,
+--     notes,
+--     cfw_photo_path,
+--     cfw_photo_desc
+-- ) 
+-- VALUES 
+--     (
+--         3001,
+--         '2025-01-18',
+--         'Illawong',
+--         'NSW',
+--         'Pair, sitting in a tree. Calling (laughing).',
+--         -33.99892500, 
+--         151.07021944,
+--         'Calling for Cy. 💕 18/1/2025. Sighted at home.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3003,
+--         '2024-12-25',
+--         'Illawong',
+--         'NSW',
+--         'Sitting on the clothes line.',
+--         -33.99870833, 
+--         151.07039444,
+--         'Christmas day - Family dinner, (day light savings). Sighted at home.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3002,
+--         '2025-01-27',
+--         'Illawong',
+--         'NSW',
+--         'Sitting in a tree, feeding on flowers. Calling.',
+--         -33.99883889, 
+--         151.07013056,
+--         'Part of a small flock (4-5) in the same tree. Sighted at home.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3005,
+--         '2024-12-22',
+--         'Illawong',
+--         'NSW',
+--         'Sitting in a tree.',
+--         -33.99883889, 
+--         151.07013056,
+--         'Sighted at home.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3004,
+--         '2024-12-24',
+--         'Illawong',
+--         'NSW',
+--         'In flight.',
+--         -33.99903611, 
+--         151.07011667,
+--         'Sighted at home.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3006,
+--         '2025-01-29',
+--         'Illawong',
+--         'NSW',
+--         'Sitting on a brick wall.',
+--         -33.99868056, 
+--         151.07020278,
+--         '90% sure this was a Grey Currawong. Browner, less white. Sighted at home.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3001,
+--         '2024-12-24',
+--         'Illawong',
+--         'NSW',
+--         'Sitting on the clothes line. Hunting.',
+--         -33.99874722, 
+--         151.07034722,
+--         'Taking advantage of newly mowed lawn (hunting ground). Sighted at home.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3004,
+--         '2025-01-29',
+--         'Illawong',
+--         'NSW',
+--         'Sitting on a brick wall.',
+--         -33.99868889, 
+--         151.07039444,
+--         'Sighted at home.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3002,
+--         '2024-01-27',
+--         'Illawong',
+--         'NSW',
+--         'Exiting from a hole in a tree (Angophora).',
+--         -33.99883889, 
+--         151.07013056,
+--         'Sighted two birds exiting hole (nest?); both stood at entrance prior to taking flight; ossible nest in tree hole; sighted at home.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3004,
+--         '2025-01-29',
+--         'Illawong',
+--         'NSW',
+--         'Sitting in a tree.',
+--         -34.00754444, 
+--         151.04940556,
+--         'Sighted near Illawong Village shops.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3001,
+--         '2025-01-26',
+--         'Illawong',
+--         'NSW',
+--         'Sitting in a tree.',
+--         -34.00396389, 
+--         151.05332500,
+--         'Sighted near "Letterbox Lane".',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3001,
+--         '2024-12-16',
+--         'Illawong',
+--         'NSW',
+--         'Sitting on a wire.',
+--         -34.00396389, 
+--         151.05332500,
+--         'Sighted near Bignell Street bus stop.',
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3001,
+--         '2025-01-31',
+--         'Illawong',
+--         'NSW',
+--         'Sitting in a tree.',
+--         -33.99969167, 
+--         151.06240000,
+--         NULL,
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3005,
+--         '2025-01-31',
+--         'Illawong',
+--         'NSW',
+--         'Sitting in a large, old Angophora (Sydney Red Gum) adjacent to northern footpath; Laughing Kookaburras (x6) and Sulphur-Crested Cockatoos (x2) in same tree; sighted along Griffin Parage.',
+--         -34.00346944, 
+--         151.06030000,
+--         NULL,
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3001,
+--         '2025-01-31',
+--         'Illawong',
+--         'NSW',
+--         'Flock of 6 sitting in a large, old Angophora (Sydney Red Gum) adjacent to northern footpath; calling (laughing); Australian King-Parrot and Sulphur-Crested Cockatoos (x2) in same tree; sighted along Griffin Parade.', 
+--         -34.00346944, 
+--         151.06030000,
+--         NULL,
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3005,
+--         '2025-01-31',
+--         'Illawong',
+--         'NSW',
+--         'Flock of 4 sitting in a group of trees on southern edge of roadway, within reserve; sighted in Thompsons Bay Reserve.',
+--         -34.00346944, 
+--         151.06030000,
+--         NULL,
+--         NULL,
+--         NULL
+--     ),
+--     (
+--         3007,
+--         '2025-01-31',
+--         'Illawong',
+--         'NSW',
+--         'Two sitting in a large, old Angophora (Sydney Red Gum) adjacent to northern footpath; Australian King-Parrot and Laughing Kookaburras (x6) in same tree; sighted along Griffin Parade.', 
+--         -34.00346944, 
+--         151.06030000,
+--         NULL,
+--         NULL,
+--         NULL
+--     );
 
 
 
@@ -590,7 +650,3 @@ VALUES
 --     birdSpecies.genus_id = birdGenera.genus_id
 -- WHERE 
 --     birdGenera.genus_name = 'Strepera';
-
-
-
-

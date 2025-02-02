@@ -46,38 +46,27 @@ Search Sightings - Carlie's Australian Bird Sightings
                 <option value="date">By Date</option>
             </select>
         </form>
+        <!-- Placeholder for the chosen search type -->
+        <div id="chosen-search-type" class="chosen-type">
+            Chosen Search Type: <span id="search-result">None</span>
+        </div>
     </section>
-
-    <!-- Placeholder for the chosen search type -->
-    <div id="chosen-search-type" class="chosen-type">
-        Chosen Search Type: <span id="search-result">None</span>
-    </div>
 
     <!-- Grid of all bird species  - IN FUTURE GET FROM MY DATABASE -->
     <section id="bird-sightings">
         <div class="grid-container">
-            <!-- Each bird record -->
+        {% for row in content %}
             <div class="bird-record">
-                <img src="../static/images/birds/rainbow_lorikeet.jpg" alt="Rainbow Lorikeet" class="bird-image">
-                <h3 class="bird-name">Rainbow Lorikeet</h3>
-                <a href="bird1_profile.html" class="profile-link">Profile</a>
+                <img
+                    class="bird-image"
+                    src="{{ row['image_bird1_path'] }}"
+                    alt="{{ row['image_bird1_desc'] }}"
+                />
+                    <h3 class="bird-name">{{ row['common_name'] }}</h3>
+                    <a class="profile-link" href="bird_profile.html">Profile</a
+                >
             </div>
-            <div class="bird-record">
-                <img src="../static/images/birds/australian_king_parrot.jpg" alt="Australian King-Parrot" class="bird-image">
-                <h3 class="bird-name">Australian King-Parrot</h3>
-                <a href="bird2_profile.html" class="profile-link">Profile</a>
-            </div>
-            <div class="bird-record">
-                <img src="../static/images/birds/grey_butcherbird.jpg" alt="Grey Butcherbird" class="bird-image">
-                <h3 class="bird-name">Grey Butcherbird</h3>
-                <a href="bird3_profile.html" class="profile-link">Profile</a>
-            </div>
-                <div class="bird-record">
-                <img src="../static/images/birds/pied_currawong.jpg" alt="Pied Currawong" class="bird-image">
-                <h3 class="bird-name">Pied Currawong</h3>
-                <a href="bird4_profile.html" class="profile-link">Profile</a>
-            </div>
-            <!-- Add more records as needed -->
+        {% endfor %}
         </div>
     </section>
 </div>

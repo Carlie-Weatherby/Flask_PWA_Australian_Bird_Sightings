@@ -18,7 +18,10 @@ def about():
 # Route for the Search Sightings page
 @app.route('/search')
 def search_sightings():
-    return render_template('search_sightings.html')
+    
+    species_data = dbHandler.listSpecies()
+    # return render_template('search_sightings.html')
+    return render_template('search_sightings.html', content=species_data)
 
 # Route for the Donate page
 @app.route('/donate')
