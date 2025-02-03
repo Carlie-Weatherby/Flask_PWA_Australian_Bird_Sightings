@@ -26,8 +26,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
         
         <!-- Links the Web App Manifest for PWA functionality -->
-        <link rel="manifest" href="../static/manifest.webmanifest" /> <!-- Updated from .json to .webmanifest to meet w3C stds. -->
-        
+        <!--<link rel="manifest" href="../static/manifest.webmanifest" /> <!-- Updated from .json to .webmanifest to meet w3C stds. -->
+        <link rel="manifest" href="{{ url_for('static', filename='manifest.webmanifest') }}">
+
         <!-- Defines the favicons for the browser tab; various sizes -->
         <link rel="icon" type="image/png" href="/static/images/icon/icon-512x512.png">
         <link rel="icon" type="image/png" href="/static/images/icon/icon-384x384.png">
