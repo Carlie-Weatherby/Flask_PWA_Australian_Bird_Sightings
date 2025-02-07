@@ -1,4 +1,4 @@
--- *** COMMANDS I'VE PLAYED WITH (NOT IN ORDER) ***
+-- *** SQL COMMANDS I'VE PLAYED WITH THROUGHOUT PROJECT (NOT IN ORDER) ***
 -- DROP TABLE birdFamily;
 -- ALTER TABLE birdFamily RENAME COLUMN family_name TO family_name_english;
 -- ALTER TABLE birdFamily RENAME COLUMN common_family_name TO family_name_latin;
@@ -28,6 +28,7 @@
 
 -- INSERT INTO birdFamilies(family_name_english, family_name_latin, description)
 -- VALUES ('kingfishers', 'Alcedinidae', 'Rollers, ground rollers, kingfishers');
+
 
 -- INSERT INTO birdFamilies(family_name_english, family_name_latin, description)
 -- VALUES
@@ -149,6 +150,7 @@
 --     FOREIGN KEY (abundance_id) REFERENCES birdAbundance(abundance_id),
 --     FOREIGN KEY (movement_id) REFERENCES birdMovement(movement_id)
 --     );
+
 
 -- INSERT INTO birdSpecies(
 --     genus_id,
@@ -318,30 +320,30 @@
 --         'Distribution map - Grey Currawong.', 
 --         '../static/audio/Grey_Currawong.mp3'   
 --     ),
-    (
-        1010,
-        'Cacatua galerita',
-        'Sulphur-crested Cockatoo',
-        NULL,
-        1003,
-        1004,
-        'Flocks feed on ground. White; distinctive in flight; uneven wing-beat (flap-flap-glide) on stiff, broad, rounded wings. Erectile, forward-curving sulphur crest. Underwing, washed yellow.', 
-        48,
-        55,
-        'cm',
-        NULL,
-        'Extremely raucous screech; single squark in flight.',
-        'Many, varied vegetation types.',
-        '../static/images/birds/sulfur_crested_cockatoo_by_Wendy_Smith.jpg',
-        'Photo of a Sulphur-crested Cockatoo landing on a branch, wings outstretched. Photograph by Wendy Smith.',
-        NULL,
-        NULL,
-        NULL,
-        NULL,
-        '../static/images/birds/maps/map-sulphur_crested_cockatoo.png',
-        'Distribution map - Laughing kookaburra.', 
-        '../static/audio/Sulphur_Crested_Cockatoo.mp3'
-    );
+--     (
+--         1010,
+--         'Cacatua galerita',
+--         'Sulphur-crested Cockatoo',
+--         NULL,
+--         1003,
+--         1004,
+--         'Flocks feed on ground. White; distinctive in flight; uneven wing-beat (flap-flap-glide) on stiff, broad, rounded wings. Erectile, forward-curving sulphur crest. Underwing, washed yellow.', 
+--         48,
+--         55,
+--         'cm',
+--         NULL,
+--         'Extremely raucous screech; single squark in flight.',
+--         'Many, varied vegetation types.',
+--         '../static/images/birds/sulfur_crested_cockatoo_by_Wendy_Smith.jpg',
+--         'Photo of a Sulphur-crested Cockatoo landing on a branch, wings outstretched. Photograph by Wendy Smith.',
+--         NULL,
+--         NULL,
+--         NULL,
+--         NULL,
+--         '../static/images/birds/maps/map-sulphur_crested_cockatoo.png',
+--         'Distribution map - Laughing kookaburra.', 
+--         '../static/audio/Sulphur_Crested_Cockatoo.mp3'
+--     );
 
 
 
@@ -607,8 +609,7 @@
 
 
 
-
--- *** QUERIES ***
+-- *** MY SQL QUERIES ***
 -- SELECT * FROM birdGenera;
 -- WHERE family_id=1002;
 

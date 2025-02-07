@@ -3,25 +3,21 @@ html {
     background-color: #f0efef;  /* Light grey background */
 }
 
-
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-
 header{
     height: auto;
 }
-
 
 body {
     font-family: 'Roboto', Verdana, Tahoma, sans-serif;
     font-size: 1rem;
     line-height: 1.6;
 }
-
 
 /* Banner container */
 .banner {
@@ -33,14 +29,12 @@ body {
     border-bottom: 2px solid #ccc; /* Optional border */
 }
 
-
 /* Logo styling */
 .logo {
     width: 140px; /* Adjust the size of the logo */
     height: 140px; /* Make sure it's a square */
     margin-right: 5px; /* Space between logo and text */
 }
-
 
 /* Banner text container */
 .banner-text {
@@ -54,16 +48,13 @@ body {
     color: black; 
 }
 
-
 .banner-text h1 {
     font-size: 3.0rem; /* Adjust heading size - Changing this messes with Nav bar active box sizing*/
 }
 
-
 .banner-text h2 {
     font-size: 1.5rem; /* Smaller font size for subheading */
 }
-
 
 /* Top Navigation Bar */
 .topnav {
@@ -76,7 +67,6 @@ body {
     box-sizing: border-box;
     height: 60px;
 }
-
 
 .topnav a {
     float: left;
@@ -92,24 +82,20 @@ body {
     height: 100%;
 }
 
-
 .topnav a.active {
     background-color: #04AA6D; /* Highlighted link */
     color: white;
     font-weight: bold;
 }
 
-
 .topnav a:hover {
     background-color: #ddd;
     color: black;
 }
 
-
 .topnav .icon {
     display: none;
 }
-
 
 /* Mobile Menu */
 @media screen and (max-width: 600px) {
@@ -142,12 +128,10 @@ body {
     .nav-icon { margin-right: 0; }
 }
 
-
 .nav-icon {
     margin-left: 4px; /* Space between text and icon */
     align-items: center; /* Vertically center icon */
 }
-
 
 section{
     display: flex;
@@ -158,7 +142,6 @@ section{
     margin-bottom: 10px; /* Adds space between sections */
 }
 
-
 .container-about{
     margin-top: 2rem;
     display: flex;
@@ -167,31 +150,26 @@ section{
     text-align: center;
 }
 
-
 .container-about img{
     height: 300px;
     width: 300px;
     border-radius: 50%; /* Rounds the corners as a percentage of the element's dimensions. */
 }
 
-
 .container-about h2{
     margin-top: 3%;
     font-size: 3em;
 }
-
 
 .container p, ul{
     margin-top: 2%;
     font-size: 1.5rem;
 }
 
-
 /* Container for the title */
 .title-container {
     text-align: center;
 }
-
 
 /* Page Heading (major) */
 .page-heading {
@@ -200,7 +178,6 @@ section{
     color: #333;         /* Dark color for readability */
 }
 
-
 /* Minor Heading (Page subheading) */
 .minor-heading {
     font-size: 1.5rem;
@@ -208,13 +185,11 @@ section{
     font-weight: normal; 
 }
 
-
 /* Optional: Adding some space between the headings and the content */
 #page-heading, #page-subheading {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
 
 /* Responsive Design: Adjust font sizes for smaller screens */
 @media screen and (max-width: 600px) {
@@ -227,7 +202,6 @@ section{
     }
 }
 
-
 /* Grid Container for Bird Records */
 .grid-container {
     display: grid;
@@ -236,7 +210,6 @@ section{
     padding: 20px;
     justify-items: center; /* Centers the content within each grid item */
 }
-
 
 /* Each bird record box */
 .bird-record {
@@ -254,7 +227,6 @@ section{
     padding-bottom: 60px; /* Extra space at the bottom for the button */
 }
 
-
 .bird-image {
     width: 100%; /* Make image take up the full width of the box */
     height: auto;
@@ -262,13 +234,11 @@ section{
     margin-bottom: 7px; /* Space below the image */
 }
 
-
 .bird-name {
     font-size: 1.2rem;
     margin: 10px 0;
     word-wrap: break-word; /* Ensures long names do not overflow */
 }
-
 
 .profile-link {
     position: absolute; /* Allows positioning relative to .bird-record */
@@ -283,11 +253,9 @@ section{
     border-radius: 5px;
 }
 
-
 .profile-link:hover {
     background-color: #028C57; /* Darker shade for hover effect */
 }
-
 
 /* Mobile responsiveness */
 @media screen and (max-width: 600px) {
@@ -295,7 +263,6 @@ section{
         grid-template-columns: repeat(1, 1fr); /* 1 item per row on mobile */
     }
 }
-
 
 /* Styling for the Search Section */
 #search-section {
@@ -347,7 +314,6 @@ section{
     outline: none; /* Remove default browser outline */
 }
 
-
 /* Responsive Design: Adjust Layout on Small Screens */
 @media screen and (max-width: 600px) {
     #search-section {
@@ -365,7 +331,6 @@ section{
         width: 100%; /* Full width on small screens */
     }
 }
-
 
 /* Shared styles for all search-related text boxes */
 .search-input {
@@ -412,7 +377,6 @@ section{
     color: #04AA6D; /* Match the green theme */
 }
 
-
 /* Make the message container span all grid columns */
 .no-sightings-container {
     grid-column: 1 / -1;       /* Span from the first column to the last */
@@ -448,13 +412,11 @@ button[type="submit"] {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-
 button[type="submit"]:hover {
     background-color: #005fa3;     /* Darker shade on hover */
     transform: translateY(-2px);   /* Slight lift effect */
     box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15); /* Enhance shadow */
 }
-
 
 button[type="submit"]:active {
     background-color: #004e8a;     /* Even darker when clicked */
@@ -462,12 +424,10 @@ button[type="submit"]:active {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Reset shadow */
 }
 
-
 button[type="submit"]:focus {
     outline: 3px solid #80d0ff;    /* Bright outline for accessibility */
     outline-offset: 2px;           /* Space between outline and button */
 }
-
 
 @media (max-width: 600px) {
     button[type="submit"] {
@@ -490,15 +450,12 @@ button[type="submit"]:focus {
     font-size: 1rem;         /* Consistent font size */
 }
 
-
 /* About Page Styling */
 #about {
     padding: 50px 20px;
     background-color: #f9f9f9;
     /* background-color: bisque; */
-
 }
-
 
 .about-container {
     display: flex;
@@ -510,13 +467,11 @@ button[type="submit"]:focus {
     margin: 0 auto;
 }
 
-
 .about-photo {
     flex: 1;
     max-width: 40%;
     text-align: center;
 }
-
 
 .profile-photo {
     width: 100%;
@@ -525,19 +480,16 @@ button[type="submit"]:focus {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 .about-text {
     flex: 1;
     max-width: 55%;
 }
-
 
 .about-text h1 {
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 20px;
 }
-
 
 .about-text p {
     font-size: 1.1rem;
@@ -546,7 +498,6 @@ button[type="submit"]:focus {
     margin-bottom: 15px;
 }
 
-
 /* Responsive Design */
 @media screen and (max-width: 768px) {
     .about-container {
@@ -554,34 +505,28 @@ button[type="submit"]:focus {
         text-align: center;
     }
 
-
     .about-photo {
         max-width: 80%;
     }
-
 
     .about-text {
         max-width: 100%;
     }
 
-
     .about-text h2 {
         font-size: 1.4rem;
     }
-
 
     .about-text p {
         font-size: 1rem;
     }
 }
 
-
 /* Donate Page Styling */
 #donate {
     padding: 50px 20px;
     background-color: #f9f9f9;
 }
-
 
 .donate-container {
     display: flex;
@@ -593,7 +538,6 @@ button[type="submit"]:focus {
     margin: 0 auto;
 }
 
-
 .donate-item {
     flex: 1;
     max-width: 45%;
@@ -603,14 +547,12 @@ button[type="submit"]:focus {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-
 .donate-item h3 {
     font-size: 1.5rem;
     color: #333;
     margin-bottom: 10px;
     font-family: 'Montserrat', sans-serif;
 }
-
 
 .donate-item a {
     font-size: 1rem;
@@ -619,11 +561,9 @@ button[type="submit"]:focus {
     font-family: 'Roboto', sans-serif;
 }
 
-
 .donate-item a:hover {
     text-decoration: underline;
 }
-
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
@@ -632,23 +572,18 @@ button[type="submit"]:focus {
         text-align: center;
     }
 
-
     .donate-item {
         max-width: 100%;
     }
-
 
     .donate-item h3 {
         font-size: 1.2rem;
     }
 
-
     .donate-item a {
         font-size: 0.9rem;
     }
 }
-
-
 
 footer {
     line-height: 40px;

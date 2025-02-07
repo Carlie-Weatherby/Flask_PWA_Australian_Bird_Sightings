@@ -22,7 +22,6 @@ def search_sightings():
     common_name = request.args.get('common_name') # Get the selected search type
     scientific_name = request.args.get('scientific_name') # Get the selected search type
     
-    
     if search_type == 'all':
         species_data = dbHandler.listSpecies()
     elif search_type =='common-name' and common_name:
@@ -37,7 +36,6 @@ def search_sightings():
 @app.route('/donate')
 def donate():
     return render_template('donate.html')
-
 
 
 if __name__ == '__main__':
