@@ -3,7 +3,7 @@
 // Author: Carlie Weatherby
 // Date: January 2025
 
-// Wrap code in an IIFE to prevent polluting the global namespace
+// Wrap code in an  Immediately Invoked Function Expression (IIFE) to prevent polluting the global namespace
 (function () {
     "use strict"; // Enforce stricter parsing and error handling
 
@@ -38,19 +38,31 @@
      * Loads the saved search type from localStorage and updates the dropdown and display.
      */
     function loadSearchType() {
-        /*const savedValue = localStorage.getItem(STORAGE_KEY); // Retrieve the saved value*/
-        const savedValue = localStorage.getItem("chosenSearchType"); // Retrieve the saved value
+        const hasVisited = sessionStorage.getItem("hasVisited"); // Check if user has been on the page
+        const savedValue = localStorage.getItem(STORAGE_KEY); // Get last selected option
 
-        if (savedValue) {
-            searchTypeDropdown.value = savedValue; // Set the dropdown to the saved value
+        console.log("Session Storage (Has Visited):", hasVisited);
+        console.log("Saved Value in LocalStorage:", savedValue);
 
-            handleDropdownChange({ target: searchTypeDropdown });  // Ensure correct field visibility on load
-
+        if (!hasVisited) {
+            // First visit or refresh → Reset to "- None -"
+            sessionStorage.setItem("hasVisited", "true"); // Mark the page as visited
+            localStorage.removeItem(STORAGE_KEY); // Clear saved selection
+            searchTypeDropdown.value = ""; // Reset dropdown
+            console.log("First visit or refresh. Resetting dropdown to - None -");
+        } else if (savedValue) {
+            // If user has selected something before, keep that selection
+            searchTypeDropdown.value = savedValue;
+            console.log("Dropdown set to previously selected value:", savedValue);
+            handleDropdownChange({ target: searchTypeDropdown });  // Ensure correct field visibility
+        } else {
+            searchTypeDropdown.value = ""; // Default to "- None -"
+            console.log("No saved selection. Resetting to - None -");
         }
     }
 
-    // 3. Event Handlers
 
+    // 3. Event Handlers
     /**
      * Handles the dropdown's change event.
      * @param {Event} event - The change event triggered by the dropdown.
@@ -88,7 +100,6 @@
     searchTypeDropdown.addEventListener("change", handleDropdownChange);
 
     // 6. Service Worker Registration
-
     if ("serviceWorker" in navigator) {
         window.addEventListener("load", function () {
             navigator.serviceWorker
