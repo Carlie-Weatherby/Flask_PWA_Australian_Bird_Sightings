@@ -15,12 +15,12 @@
 
  -- *******************************************************
 
---  CREATE TABLE birdFamilies (
---     family_id INTEGER PRIMARY KEY AUTOINCREMENT,
---     family_name_english TEXT NOT NULL,
---     family_name_latin TEXT NOT NULL,
---     description TEXT NOT NULL
---     );
+CREATE TABLE birdFamilies (
+    family_id INTEGER PRIMARY KEY AUTOINCREMENT,
+    family_name_english TEXT NOT NULL,
+    family_name_latin TEXT NOT NULL,
+    description TEXT NOT NULL
+    );
 
 -- *** FAMILIES TABLE - TEMPLATE FOR DATA ENTRY ***
 -- INSERT INTO birdFamilies(family_name_english, family_name_latin, description)

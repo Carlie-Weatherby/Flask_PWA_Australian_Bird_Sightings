@@ -2,10 +2,10 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <!-- Ensure Internet Explorer uses the latest rendering engine -->
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
         
         <!-- Content Security Policy (CSP):
         Allows Font Awesome to load securely. Includes:
@@ -16,7 +16,7 @@
         
         <title>Carlie's Australian Bird Sightings</title>
 
-        <link rel="stylesheet" href="/static/css/style.css" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
         
         <!-- Font Awesome Icons -->
         <script src="https://kit.fontawesome.com/5d45148ce3.js" crossorigin="anonymous"></script>
@@ -49,7 +49,9 @@
         </footer>
 
         <!-- Links the main JavaScript file -->
-        <script src="/static/js/search.js"></script> <!-- I don't have this file yet - I have search.js ??? -->
+        <!-- <script src="/static/js/search.js"></script>  - advised to use dynamic option, below -->
+        <script src="{{ url_for('static', filename='js/search.js') }}"></script>
+    
     </body>
 </html>
 
