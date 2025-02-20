@@ -26,7 +26,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
         
         <!-- Links the Web App Manifest for PWA functionality -->
-        <!--<link rel="manifest" href="../static/manifest.webmanifest" /> <!-- Updated from .json to .webmanifest to meet w3C stds. -->
+        <!-- Updated from .json to .webmanifest to meet w3C stds. -->
+        <!--<link rel="manifest" href="../static/manifest.webmanifest"> -->
         <link rel="manifest" href="{{ url_for('static', filename='manifest.webmanifest') }}">
 
         <!-- Defines the favicons for the browser tab; various sizes -->
@@ -37,13 +38,18 @@
     </head>
     <body>
         <!-- Header area with the banner and navigation menu -->
-        {% include "partials/menu.html" %}
+        <header>
+            <nav>
+                {% include "partials/menu.html" %}
+            </nav>
+        </header>
         
         <!-- Main area with dynamic content -->
         <main>
             {% block content %}{% endblock %}
         </main>
         
+        <!-- Footer area - static content only in my site -->
         <footer>
             <p>&copy; Copyright 2025 C. Weatherby.</p>
         </footer>
@@ -51,7 +57,6 @@
         <!-- Links the main JavaScript file -->
         <!-- <script src="/static/js/search.js"></script>  - advised to use dynamic option, below -->
         <script src="{{ url_for('static', filename='js/search.js') }}"></script>
-    
     </body>
 </html>
 
