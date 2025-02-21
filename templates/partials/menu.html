@@ -1,32 +1,31 @@
-<header>
-    <!-- Banner -->
-    <div class="banner">
-        <img src="./static/images/logo.png" alt="Logo" class="logo" />
-        <div class="banner-text">
-            <h1>Australian Birds</h1>
-            <h2>- Carlie's Sightings -</h2>
-        </div>
-    </div>
+<!-- Banner -->
+<div class="banner">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo">
 
-    <!-- Navigation Bar -->
-    <nav class="topnav" id="myTopnav">
-        <a href="{{ url_for('index') }}" class="active" aria-label="Home page">
-            <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
-        </a>
-        <a href="{{ url_for('search_sightings') }}" aria-label="Search Sightings page">
-            <span class="nav-text"> Search </span>
-            <span class="nav-icon"><i class="fas fa-search"></i></span>
-        </a>
-        <a href="{{ url_for('about') }}" aria-label="About page"> 
-            <span class="nav-text"> About </span>
-            <span class="nav-icon"><i class="fas fa-info-circle"></i></span>
-        </a>
-        <a href="{{ url_for('donate') }}" aria-label="Donate page">
-            <span class="nav-text"> Donate </span>
-            <span class="nav-icon"><i class="fas fa-hand-holding-usd"></i></span>
-        </a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Toggle navigation menu">
-            <i class="fa-solid fa-bars"></i> <!-- Hamburger menu icon -->
-        </a>
-    </nav>
-</header>
+    <div class="banner-text">
+        <h1>Australian Birds</h1>
+        <h2>- Carlie's Sightings -</h2>
+    </div>
+</div>
+
+<!-- Navigation Bar -->
+<nav class="topnav" id="myTopnav">
+    <a href="{{ url_for('index') }}" class="active" aria-label="Home page">
+        <span class="nav-icon"><i class="fa-solid fa-house"></i></span>
+    </a>
+    <a href="{{ url_for('search_sightings') }}" aria-label="Search Sightings page">
+        <span class="nav-text"> Search </span>
+        <span class="nav-icon"><i class="fas fa-search"></i></span>
+    </a>
+    <a href="{{ url_for('about') }}" aria-label="About page"> 
+        <span class="nav-text"> About </span>
+        <span class="nav-icon"><i class="fas fa-info-circle"></i></span>
+    </a>
+    <a href="{{ url_for('donate') }}" aria-label="Donate page">
+        <span class="nav-text"> Donate </span>
+        <span class="nav-icon"><i class="fas fa-hand-holding-usd"></i></span>
+    </a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Toggle navigation menu">
+        <i class="fa-solid fa-bars"></i> <!-- Hamburger menu icon -->
+    </a>
+</nav>

@@ -66,6 +66,8 @@ body {
     border-bottom: 2px solid #ccc; /* Optional border */
     box-sizing: border-box;
     height: 60px;
+    width: 100vw; /* Ensures full width */
+    margin: 0; /* Removes unwanted spacing */
 }
 
 .topnav a {

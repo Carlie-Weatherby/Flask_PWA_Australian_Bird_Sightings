@@ -4,9 +4,9 @@ import sqlite3 as sql
 # TODO Add a comment here
 def listSpecies():
     con = sql.connect(".database/data_source.db") # Connect to database
-    con.row_factory = sql.Row # Set row factory to sqlite3.Row for named column access
+    con.row_factory = sql.Row # Set row factory to sqlite3. Row for named column access. # Allows dictionary-like access to columns.
     cur = con.cursor()
-    data = cur.execute('SELECT * FROM birdSpecies').fetchall()
+    data = cur.execute('SELECT * FROM birdSpecies').fetchall() # fetchall() fetches all rows
     con.close()
     return data
 
