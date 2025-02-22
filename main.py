@@ -10,7 +10,7 @@ app = Flask(__name__)
 def index():
     species_data = dbHandler.listSpecies()
     # return render_template('index.html')
-    return render_template('index.html', content=species_data) # Pass to template
+    return render_template('index.html', bird_sightings=species_data) # Pass to template
 
 # Route for the About page
 @app.route('/about')
@@ -20,9 +20,10 @@ def about():
 # Route for the Search Sightings page
 @app.route('/search', methods=['GET'])
 def search_sightings():
-    search_type = request.args.get('search_type') # Get the selected search type
-    common_name = request.args.get('common_name') # Get the selected search type
-    scientific_name = request.args.get('scientific_name') # Get the selected search type
+    search_type = request.args.get('search_type') # GET the selected search type (so is a POST method)
+    common_name = request.args.get('common_name') # GET the selected search type (so is a POST method)
+    scientific_name = request.args.get('scientific_name') # GET the selected search type (so is a POST method)
+    # Note: If using POST (not GET), then use requests.form
     
     if search_type == 'all':
         species_data = dbHandler.listSpecies()
