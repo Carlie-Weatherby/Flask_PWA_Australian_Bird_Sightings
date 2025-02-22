@@ -22,7 +22,7 @@ Carlie's Bird Sightings Homepage
     
     <section id="bird-sightings">
         <div class="grid-container">
-        {% for row in content %}
+        {% for row in bird_sightings %} <!-- Having the variable here also name 'content' was too confusing, so rename to bird)sightings. Flask route (main.py) updated. -->
             <div class="bird-record">
                 <img
                     class="bird-image"
