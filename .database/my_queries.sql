@@ -13,21 +13,22 @@
 -- DROP TABLE sightings;
 
 
- -- *******************************************************
+-- ******************************* CREATING AND INSERTING DATA TO TABLES *******************************
+-- TO-DO: CHECK AND SET ALL FOREIGN KETS AS NOT NULL, WHERE APPROPRIATE (RE CREATE DATA)
 
-CREATE TABLE birdFamilies (
-    family_id INTEGER PRIMARY KEY AUTOINCREMENT,
-    family_name_english TEXT NOT NULL,
-    family_name_latin TEXT NOT NULL,
-    description TEXT NOT NULL
-    );
+-- CREATE TABLE birdFamilies (
+--     family_id INTEGER PRIMARY KEY AUTOINCREMENT,
+--     family_name_english TEXT NOT NULL,
+--     family_name_latin TEXT NOT NULL,
+--     description TEXT NOT NULL
+--     );
 
 -- *** FAMILIES TABLE - TEMPLATE FOR DATA ENTRY ***
 -- INSERT INTO birdFamilies(family_name_english, family_name_latin, description)
 -- VALUES('name-english', 'name-latin', 'description of family');
 
--- INSERT INTO birdFamilies(family_name_english, family_name_latin, description)
--- VALUES ('kingfishers', 'Alcedinidae', 'Rollers, ground rollers, kingfishers');
+-- INSERT INTO birdFamilies(family_id, family_name_english, family_name_latin, description)
+-- VALUES (1001, 'kingfishers', 'Alcedinidae', 'Rollers, ground rollers, kingfishers');
 
 
 -- INSERT INTO birdFamilies(family_name_english, family_name_latin, description)
@@ -48,12 +49,8 @@ CREATE TABLE birdFamilies (
 --     FOREIGN KEY (family_id) REFERENCES birdFamilies(family_id)
 --     );
 
--- *** GENERA TABLE - TEMPLATE FOR DATA ENTRY ***
--- INSERT INTO birdGenera(family_id, genus_name, description)
--- VALUES('family id', 'genus name', 'description of genus');
-
--- INSERT INTO birdGenera(family_id, genus_name, description)
--- VALUES (1005, 'Chroicocephalus', 'Masked Gulls and Allies')
+-- INSERT INTO birdGenera(genus_id, family_id, genus_name, description)
+-- VALUES (1001, 1005, 'Chroicocephalus', 'Masked Gulls and Allies')
 
 -- INSERT INTO birdGenera(family_id, genus_name, description)
 -- VALUES
@@ -73,8 +70,8 @@ CREATE TABLE birdFamilies (
 --     description TEXT NOT NULL
 --     );
 
--- INSERT INTO birdType(type_code, description)
--- VALUES ('Intro.', 'A bird species deliberately introduced in Australia');
+-- INSERT INTO birdType(type_id, type_code, description)
+-- VALUES (1001, 'Intro.', 'A bird species deliberately introduced in Australia');
 
 -- INSERT INTO birdType(type_code, description)
 -- VALUES
@@ -88,8 +85,8 @@ CREATE TABLE birdFamilies (
 --     description TEXT NOT NULL
 --     );
 
--- INSERT INTO birdAbundance(abundance_code, description)
--- VALUES ('A', 'Abundant');
+-- INSERT INTO birdAbundance(abundance_id, abundance_code, description)
+-- VALUES (1001, 'A', 'Abundant');
 
 -- INSERT INTO birdAbundance(abundance_code, description)
 -- VALUES
@@ -111,8 +108,8 @@ CREATE TABLE birdFamilies (
 --     movement_icon TEXT NOT NULL -- This will store emojis as Unicode text
 --     );
 
--- INSERT INTO birdMovement(movement_code, description, movement_icon)
--- VALUES ('AM', 'Annual migrant', '🔃');
+-- INSERT INTO birdMovement(movement_id, movement_code, description, movement_icon)
+-- VALUES (1001, 'AM', 'Annual migrant', '🔃');
 
 -- INSERT INTO birdMovement(movement_code, description, movement_icon)
 -- VALUES
@@ -153,6 +150,7 @@ CREATE TABLE birdFamilies (
 
 
 -- INSERT INTO birdSpecies(
+--     species_id,
 --     genus_id,
 --     scientific_name,
 --     common_name,
@@ -177,6 +175,7 @@ CREATE TABLE birdFamilies (
 --     audio_call1_path
 -- ) VALUES 
 --     (
+--         3001,
 --         1007,
 --         'Dacelo novaeguineae',
 --         'Laughing Kookaburra',
@@ -199,7 +198,32 @@ CREATE TABLE birdFamilies (
 --         '../static/images/birds/maps/map-laughing_kookaburra.png',
 --         'Distribution map - Laughing kookaburra.', 
 --         '../static/audio/Laughing_Kookaburra.mp3'
---     ),
+--     );
+
+-- INSERT INTO birdSpecies(
+--     genus_id,
+--     scientific_name,
+--     common_name,
+--     type_id,
+--     abundance_id,
+--     movement_id,
+--     description,
+--     size_avg_min,
+--     size_avg_max,
+--     size_unit,
+--     juvenile,
+--     voice,
+--     habitat,
+--     image_bird1_path,
+--     image_bird1_desc,
+--     image_bird2_path,
+--     image_bird2_desc,
+--     image_bird3_path,
+--     image_bird3_desc,
+--     image_map1_path,
+--     image_map1_desc,
+--     audio_call1_path
+-- ) VALUES 
 --     (
 --         1002,
 --         'Trichoglossus moluccanus',
@@ -364,6 +388,7 @@ CREATE TABLE birdFamilies (
 --     );
 
 -- INSERT INTO sightings(
+--     sighting_id,
 --     species_id,
 --     date_sighted,
 --     location_suburb,
@@ -376,6 +401,7 @@ CREATE TABLE birdFamilies (
 --     cfw_photo_desc
 -- ) 
 -- VALUES (
+--     5001,
 --     3005,
 --     '2024-12-24',
 --     'Illawong',
@@ -609,7 +635,7 @@ CREATE TABLE birdFamilies (
 
 
 
--- *** MY SQL QUERIES ***
+-- ******************************* MY SQL QUERIES *******************************
 -- SELECT * FROM birdGenera;
 -- WHERE family_id=1002;
 
